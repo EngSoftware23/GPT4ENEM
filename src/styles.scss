@@ -2,3 +2,17 @@
 @import "scss/abstracts/variables";
 @import "scss/abstracts/mixins";
 @import "scss/base/typografy";
+
+.form {
+    &__container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        background-color: $color-white;
+        height: 80%;
+        border-radius: 2rem 0rem 0rem 2rem;
+        padding: 6rem;
+    }
+}

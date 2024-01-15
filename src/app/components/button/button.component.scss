@@ -1,0 +1,12 @@
+@import '../../../scss/abstracts/mixins';
+@import '../../../scss/abstracts/variables';
+
+.button {
+    &__container {
+        @include button
+    }
+
+    &-image {
+        width: 2.5rem;
+    }
+}

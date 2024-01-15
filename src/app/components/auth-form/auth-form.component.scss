@@ -1,0 +1,42 @@
+@import '../../../scss/abstracts/variables';
+@import '../../../scss/abstracts/mixins';
+
+.authform {
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        width: 100%;
+    }
+
+    &-inputs_container {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    &-input {
+        border-radius: 2rem;
+        padding: 1.4rem;
+        border: 0.1rem solid $text-gray-light;
+    }
+
+    &-button {
+        @include button;
+        
+    }
+
+    &-others {
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+        justify-content: center;
+        align-items: center;
+
+        &-paragraph {
+            color: $text-gray-light;
+            font-size: 1.3rem;
+        }
+    }
+}
