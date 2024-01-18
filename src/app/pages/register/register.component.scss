@@ -1,0 +1,37 @@
+.register {
+    &__container{
+        display: flex;
+        width: 100vw;
+        height: 100vh;
+        justify-content: center; 
+        align-items: center;
+        background-color: aqua;
+        padding: 0 10%;
+    }
+
+    &-informations{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        height: 80%;
+        width: 100%;
+        
+        &-form{
+            background-color: white;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border-radius: 2rem 0rem 0rem 2rem;
+        }
+
+        &-decoretion{
+            background: url("../../../assets/images/auth-bg.svg");
+            height: 100%;
+            border-radius: 0rem 2rem 2rem 0rem;
+            
+        }
+
+    }
+}
+
