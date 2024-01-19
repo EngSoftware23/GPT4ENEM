@@ -1,0 +1,48 @@
+@import '../../../../../scss/abstracts/variables';
+@import '../../../../../scss/abstracts/mixins';
+
+.our-services {
+    &__container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 3rem;
+    }
+
+    &-paragragh {
+        @include paragraph;
+        text-align: center;
+        padding: 2rem 5%;
+    }
+
+    &-list {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        list-style: none;
+        gap: 3rem;
+
+        &-item {
+            display: grid;
+            grid-template-rows: 1fr 0.1fr 0.7fr;
+            gap: 1rem;
+            align-items: flex-start;
+            justify-content: flex-start;
+            background-color: white;
+            border-radius: 2rem;
+            padding: 5rem;
+
+            &-image {
+                width: 30%;
+            }
+
+            &-title {
+                font-weight: 600;
+            }
+
+            &-paragraph {
+                @include paragraph;
+            }
+        }
+    }
+}

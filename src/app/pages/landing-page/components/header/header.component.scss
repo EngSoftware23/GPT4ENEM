@@ -1,0 +1,41 @@
+@import '../../../../../scss/abstracts/variables';
+@import '../../../../../scss/abstracts/mixins';
+
+.header {
+    &__container {
+        display: grid;
+        grid-template-columns: 1fr 1.7fr;
+        height: 90vh;
+        align-items: center;
+        gap: 10rem;
+    }
+    
+    &-informations {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+
+        &-title {
+            font-size: 4rem;
+            line-height: 5rem;
+        }
+
+        &-paragraph {
+            @include paragraph;
+        }
+
+        &-button {
+            @include button;
+            text-decoration: none;
+        }
+    }
+
+    &-image {
+        width: 100%;
+
+        & img {
+            width: 100%;
+        }
+    }
+}

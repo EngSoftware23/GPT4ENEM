@@ -1,0 +1,9 @@
+@import '../../../scss/abstracts/variables';
+@import '../../../scss/abstracts/mixins';
+
+.landing-page {
+    &__container {
+        padding: 0% 10%;
+        padding-bottom: 5%;
+    }
+}

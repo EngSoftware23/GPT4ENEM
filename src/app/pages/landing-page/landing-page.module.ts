@@ -1,18 +1,23 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LandingPageComponent } from './landing-page.component';
-
+import { LayoutModule } from 'src/app/layout/layout.module';
+import { HeaderComponent } from './components/header/header.component';
+import { OurServicesComponent } from './components/our-services/our-services.component';
 
 
 @NgModule({
   declarations: [
-    LandingPageComponent
+    LandingPageComponent,
+    HeaderComponent,
+    OurServicesComponent,
   ],
   exports: [
     LandingPageComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    LayoutModule
   ]
 })
 export class LandingPageModule { }
