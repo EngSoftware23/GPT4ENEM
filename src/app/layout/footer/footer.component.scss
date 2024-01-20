@@ -13,6 +13,13 @@
         flex-direction: column;
         gap: 2rem;
         width: 80%;
+
+        &-logo {
+            & svg {
+                width: 35%;
+                fill: white;
+            }
+        }
     }
 
     &-list {

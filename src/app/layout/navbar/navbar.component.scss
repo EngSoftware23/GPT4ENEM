@@ -5,7 +5,14 @@
     &__container {
         display: flex;
         justify-content: space-between;
-        padding: 2rem 0;
+        padding: 3rem 0;
+    }
+
+    &-logo {
+        & svg {
+            width: 65%;
+            fill: #8F7EF3;
+        }
     }
 
     &-list {
