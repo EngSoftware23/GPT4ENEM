@@ -1,0 +1,26 @@
+@import "../../../scss/base/animations";
+
+.arrow-to-top {
+    &__container {
+        padding: 1.5rem;
+        position: fixed;
+        right: 2rem;
+        bottom: 2rem;
+        background: linear-gradient(90deg, rgba(145,129,244,1) 0%, rgba(80,56,237,1) 100%);
+        width: fit-content;
+        border-radius: 2rem;
+        cursor: pointer;
+        display: none;
+
+        &.active {
+            display: block;
+            animation: 0.5s slideToTop ease-in-out;
+        }
+        
+        &-svg {
+            width: 2rem;
+            fill: white;
+            margin-bottom: -0.5rem;
+        }
+    }
+}

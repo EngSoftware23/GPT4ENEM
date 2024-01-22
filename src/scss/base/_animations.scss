@@ -1,0 +1,9 @@
+@keyframes slideToTop {
+    0% {
+        transform: translateY(10rem);
+    }
+
+    100% {
+        transform: translateY(0rem);
+    }
+}
