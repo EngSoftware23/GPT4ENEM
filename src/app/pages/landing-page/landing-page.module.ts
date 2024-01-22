@@ -4,6 +4,7 @@ import { LandingPageComponent } from './landing-page.component';
 import { LayoutModule } from 'src/app/layout/layout.module';
 import { HeaderComponent } from './components/header/header.component';
 import { OurServicesComponent } from './components/our-services/our-services.component';
+import { HighlightComponent } from './components/highlight/highlight.component';
 
 
 @NgModule({
@@ -11,6 +12,7 @@ import { OurServicesComponent } from './components/our-services/our-services.com
     LandingPageComponent,
     HeaderComponent,
     OurServicesComponent,
+    HighlightComponent,
   ],
   exports: [
     LandingPageComponent

@@ -1,0 +1,45 @@
+@import '../../../../../scss/abstracts/variables';
+@import '../../../../../scss/abstracts/mixins';
+
+
+.hightlight {
+    &__container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        justify-content: center;
+        align-items: center;
+
+        &-image {
+            width: 100%;
+            text-align: center;
+            & img {
+                width: 90%;
+            }
+
+            &.reverse {
+                order: 2;
+            }
+        }
+    
+        &-informations {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 80%;
+            gap: 2rem;
+
+            &.reverse {
+                order: 1;
+            }
+    
+            &-title {
+                line-height: 4rem
+            }
+            &-paragraph {
+                @include paragraph;
+                text-align: justify;
+            }
+        }
+    }
+    
+}
