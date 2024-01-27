@@ -37,7 +37,6 @@
             }
             &-paragraph {
                 @include paragraph;
-                text-align: justify;
             }
         }
     }

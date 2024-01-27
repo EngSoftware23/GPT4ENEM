@@ -5,11 +5,17 @@
     &__container {
         display: grid;
         grid-template-columns: 1fr 1.7fr;
-        height: calc(100vh - 10rem);
+        height: 100vh;
         align-items: center;
         gap: 10rem;
-
     }
+
+    @media screen and (min-width: 1000px) and (max-width: 1600px) {
+       &__container {
+            height: 112vh;
+       }
+    }
+    
     
     &-informations {
         width: 100%;
