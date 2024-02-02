@@ -1,0 +1,24 @@
+<form [formGroup]="formulario" class="service-form__container" method="POST"  (ngSubmit)="inviteData()">
+
+    <h1>Insira o Link do Youtube</h1>
+    <span>✨ Veja a mágia acontecer ✨</span>
+    <input formControlName="linkUrl"  class="service-form__container-input" type="url" placeholder="Digite o Link do Youtube" required>
+
+    <ul class="service-form__container-list">
+        <li class="service-form__container-list-service" [ngClass]="{'clicado': selectedItemIndex === 0}" (click)="onItemClick(0)">
+            <img class="service-form__container-list-service-image" src="../../../../../assets/images/documentation_12238166.png" alt="">
+            <h3 class="service-form__container-list-service-title">Criar Resumo</h3>
+        </li>
+        <li class="service-form__container-list-service" [ngClass]="{'clicado': selectedItemIndex === 1}" (click)="onItemClick(1)">
+            <img class="service-form__container-list-service-image" src="../../../../../assets/images/file_9079107.png" alt="">
+            <h3 class="service-form__container-list-service-title">Transcrever Audio</h3>
+        </li>
+        <li class="service-form__container-list-service" [ngClass]="{'clicado': selectedItemIndex === 2}" (click)="onItemClick(2)">
+            <img class="service-form__container-list-service-image" src="../../../../../assets/images/magnifying-glass_5719385.png" alt="">
+            <h3 class="service-form__container-list-service-title">Verificar Cobertura de Conteúdo ENEM</h3>
+        </li>
+    </ul>
+
+    <input class="service-form__container-button service-form__container-button-primary-color" type="submit" value="Enviar">
+
+</form>
