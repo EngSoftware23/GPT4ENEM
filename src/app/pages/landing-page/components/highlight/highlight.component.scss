@@ -40,5 +40,41 @@
             }
         }
     }
+
+    @media screen and (max-width: 480px) {
+        &__container {
+            grid-template-columns: 1fr;
+            text-align: center;
+            row-gap: 2rem;
+            margin-bottom: 4rem;
+    
+            &-image {
+    
+                & img {
+                    width: 100%;
+                }
+                
+                &.reverse {
+                    order: 1;
+                }
+            }
+    
+            &-informations {
+                width: 100%;
+    
+                &-title {
+                    line-height: 3rem;
+                    font-size: 2.5rem;
+                }
+    
+                &-paragraph {
+                    text-align: justify;
+                }
+            }
+        }
+    }
+
+
+    
     
 }

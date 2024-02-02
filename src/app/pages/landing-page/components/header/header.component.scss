@@ -14,8 +14,7 @@
        &__container {
             height: 112vh;
        }
-    }
-    
+    }    
     
     &-informations {
         width: 100%;
@@ -41,10 +40,27 @@
 
     &-image {
         width: 100%;
-       
-
         & img {
             width: 100%;
+        }
+    }
+
+    @media screen and (max-width: 480px) {
+        &__container {
+            grid-template-columns: 1fr;
+            gap: 0rem;
+        }
+
+        &-informations {
+            order: 2;
+            text-align: justify;
+            align-items: center;
+
+            &-title {
+                font-size: 2.5rem;
+                line-height: 3rem;
+                text-align: center;
+            }
         }
     }
 }

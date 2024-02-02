@@ -78,4 +78,45 @@
             }
         }
     }
+
+    @media screen and (max-width: 480px) {
+        &__container {
+
+            &-paragraph {
+                text-align: justify;
+            }
+
+            &-list {
+                &-item {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    padding: 2rem;
+                    position: relative;
+
+                    &-title {
+                        font-size: 2rem;
+                        text-align: center;
+                    }
+
+                    &-image {
+                        width: 45%;
+                        margin-bottom: -8rem;
+                        position: absolute;
+                        right: 0%;
+                        transition: all .2s;
+                        transform: rotateZ(-10deg);
+                    }
+
+                    &:nth-child(2) {
+                       .benefits__container-list-item-image {
+                            width: 53%;
+                            right: -7%;
+                       }
+                    }
+
+                    
+                }
+            }
+        }
+    }
 }

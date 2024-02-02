@@ -40,4 +40,21 @@
             }
         }
     }
+
+    @media screen and (max-width: 480px) {
+        &__container {
+            grid-template-columns: 1fr;
+            gap: 3rem;
+            padding: 10%;
+        }
+
+        &-company-information {
+            width: 100%;
+            order: 2;
+        }
+
+        &-list {
+            gap: 1rem;
+        }
+    }
 }
