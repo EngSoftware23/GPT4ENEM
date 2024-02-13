@@ -1,4 +1,4 @@
-<form action="" method="POST" class="authform__container" (ngSubmit)="onSubmit()">
+<form method="POST" class="authform__container" (ngSubmit)="onSubmit($event)">
     <h1>{{ type }}</h1>
 
     <div class="authform-inputs_container">
@@ -13,7 +13,11 @@
 
     <div class="authform-others">
         <span class="authform-others-paragraph">ou</span>
-        <app-button text="Entrar com o Google" photoUrl="https://cdn.discordapp.com/attachments/1175567729432993965/1196527872907685928/google-icon.png?ex=65b7f46b&is=65a57f6b&hm=d584dca128157d0212b9c0ef474b54532483212476e76eecf0bc722da7c9d7f6&"></app-button>
+
+
+        <asl-google-signin-button  class="authform-others-google-button" type='standard' size='large' shape="pill" text="continue_with" >
+        </asl-google-signin-button>
+     
         <p *ngIf="type == 'Login'" class="authform-others-paragraph">Ainda não possui uma conta?
              <a [routerLink]="['/cadastro']">Clique aqui</a>
         </p>
@@ -22,6 +26,7 @@
             <a [routerLink]="['/login']">Clique aqui</a>
        </p>
     </div>
+ 
    
 </form>
-    
+<script src="https://accounts.google.com/gsi/client" async></script>

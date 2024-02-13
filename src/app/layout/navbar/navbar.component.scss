@@ -1,0 +1,49 @@
+@import '../../../scss/abstracts/variables';
+@import '../../../scss/abstracts/mixins';
+
+.navbar {
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 10rem;
+    }
+
+    &-logo {
+        & svg {
+            width: 75%;
+            fill: #8F7EF3;
+        }
+    }
+
+    &-list {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        list-style: none;
+        gap: 2rem;
+
+        &-item {
+            &-link {
+                text-decoration: none;
+                color: black;
+            }
+        }
+
+        &-button {
+            &-link {
+                @include button;
+                text-decoration: none;
+            }
+        } 
+    }
+
+    &-icon-user {
+
+        & img {
+            width: 6rem;
+            border-radius: 50%;
+        }
+      
+    }
+}

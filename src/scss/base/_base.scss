@@ -7,3 +7,13 @@
 html {
     font-size: 62.5%;
 }
+
+body {
+    background: darken(white, 10%);
+}
+
+@media screen and (min-width: 1000px) and (max-width: 1600px) {
+    body {
+        zoom: 80%;
+    }
+}

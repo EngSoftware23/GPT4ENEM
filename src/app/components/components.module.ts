@@ -3,8 +3,12 @@ import { CommonModule } from '@angular/common';
 import { AuthFormComponent } from './auth-form/auth-form.component';
 import { ButtonComponent } from './button/button.component';
 import { FormsModule } from '@angular/forms';
-import { RouterLinkWithHref, RouterModule } from '@angular/router';
-
+import {  RouterModule } from '@angular/router';
+import { GoogleSigninButtonModule, SocialAuthServiceConfig } from '@abacritt/angularx-social-login';
+import {
+  GoogleLoginProvider,
+} from '@abacritt/angularx-social-login';
+import { environment } from 'src/environments/environment';
 
 
 @NgModule({
@@ -19,7 +23,26 @@ import { RouterLinkWithHref, RouterModule } from '@angular/router';
   imports: [
     CommonModule,
     FormsModule,
-    RouterModule
+    RouterModule,
+    GoogleSigninButtonModule
+  ],
+  providers: [
+    {
+      provide: 'SocialAuthServiceConfig',
+      useValue: {
+        autoLogin: false,
+        providers: [
+          {
+            id: GoogleLoginProvider.PROVIDER_ID,
+            provider: new GoogleLoginProvider(
+              environment.API_KEY
+            )
+          }
+        ],
+        onError: (error) => {
+          console.error(error);
+        }
+      } as SocialAuthServiceConfig,}
   ]
 })
 export class ComponentsModule { }

@@ -11,6 +11,13 @@
         justify-content: center;
     }
 
+    @media screen and (min-width: 1200px) and (max-width: 1600px) {
+        &__container {
+            min-height: 125vh;
+        }
+    }
+
+
     &-decoration {
         display: flex;
         align-items: center;
