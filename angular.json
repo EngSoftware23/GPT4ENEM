@@ -65,10 +65,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "GPT4ENEM:build:production"
+              "buildTarget": "GPT4ENEM:build:production"
             },
             "development": {
-              "browserTarget": "GPT4ENEM:build:development"
+              "buildTarget": "GPT4ENEM:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -76,7 +76,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "GPT4ENEM:build"
+            "buildTarget": "GPT4ENEM:build"
           }
         },
         "test": {
