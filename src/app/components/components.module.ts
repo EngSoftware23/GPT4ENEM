@@ -35,7 +35,7 @@ import { environment } from 'src/environments/environment';
           {
             id: GoogleLoginProvider.PROVIDER_ID,
             provider: new GoogleLoginProvider(
-              environment.API_KEY
+              environment.GOOGLE_KEY
             )
           }
         ],

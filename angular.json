@@ -15,10 +15,10 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-builders/custom-webpack:dev-server",
+          "builder": "@angular-builders/custom-webpack:browser",
           "options": {
             "customWebpackConfig": {
-              "path": "apps/myapp/webpack.config.js"
+              "path": "src/custom-webpack.config.ts"
             },
             "outputPath": "dist/gpt4-enem",
             "index": "src/index.html",
