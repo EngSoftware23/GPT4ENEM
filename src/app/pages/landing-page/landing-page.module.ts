@@ -6,6 +6,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { OurServicesComponent } from './components/our-services/our-services.component';
 import { HighlightComponent } from './components/highlight/highlight.component';
 import { BenefitsComponent } from './components/benefits/benefits.component';
+import { ComponentsModule } from 'src/app/components/components.module';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { BenefitsComponent } from './components/benefits/benefits.component';
   ],
   imports: [
     CommonModule,
-    LayoutModule
+    LayoutModule,
+    ComponentsModule
   ]
 })
 export class LandingPageModule { }

@@ -51,6 +51,12 @@
         &-company-information {
             width: 100%;
             order: 2;
+            &-logo {
+                & svg {
+                    width: 55%;
+                    fill: white;
+                }
+            }
         }
 
         &-list {
