@@ -1,0 +1,79 @@
+@import '../../../../../scss/abstracts/variables';
+@import '../../../../../scss/abstracts/mixins';
+
+
+.hightlight {
+    &__container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        justify-content: center;
+        align-items: center;
+
+        &-image {
+            width: 100%;
+            text-align: center;
+            & img {
+                width: 90%;
+            }
+
+            &.reverse {
+                order: 2;
+            }
+        }
+    
+        &-informations {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 80%;
+            gap: 2rem;
+
+            &.reverse {
+                order: 1;
+            }
+    
+            &-title {
+                line-height: 4rem
+            }
+            &-paragraph {
+                @include paragraph;
+            }
+        }
+    }
+
+    @media screen and (max-width: 480px) {
+        &__container {
+            grid-template-columns: 1fr;
+            text-align: center;
+            row-gap: 2rem;
+            margin-bottom: 4rem;
+    
+            &-image {
+    
+                & img {
+                    width: 100%;
+                }
+                
+                &.reverse {
+                    order: 1;
+                }
+            }
+    
+            &-informations {
+                width: 100%;
+    
+                &-title {
+                    line-height: 3rem;
+                }
+    
+                &-paragraph {
+                    text-align: justify;
+                }
+            }
+        }
+    }
+
+
+    
+    
+}

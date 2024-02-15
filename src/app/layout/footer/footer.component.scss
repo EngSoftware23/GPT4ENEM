@@ -1,0 +1,66 @@
+.footer {
+    &__container {
+        background-color: #5B9BF3;
+        padding: 5% 10%;
+        color: white;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 5rem;
+    }
+
+    &-company-information {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        width: 80%;
+
+        &-logo {
+            & svg {
+                width: 35%;
+                fill: white;
+            }
+        }
+    }
+
+    &-list {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+
+        &-page, &-region, &-help {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+
+            & h4 {
+                font-weight: 600;
+            }
+            & a {
+                color: white;
+                text-decoration: none;
+            }
+        }
+    }
+
+    @media screen and (max-width: 480px) {
+        &__container {
+            grid-template-columns: 1fr;
+            gap: 3rem;
+            padding: 10%;
+        }
+
+        &-company-information {
+            width: 100%;
+            order: 2;
+            &-logo {
+                & svg {
+                    width: 55%;
+                    fill: white;
+                }
+            }
+        }
+
+        &-list {
+            gap: 1rem;
+        }
+    }
+}
