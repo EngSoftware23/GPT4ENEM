@@ -11,6 +11,12 @@
         justify-content: center;
     }
 
+    @media screen and (min-width: 1000px) and (max-width: 1600px) {
+        &__container {
+            min-height: 125vh;
+        }
+    }
+
     &-decoration {
         display: flex;
         align-items: center;
@@ -39,6 +45,48 @@
 
             &-title, &-subtitle {
                 color: $color-white;
+            }
+        }
+    }
+
+    @media screen and (max-width: 480px) {
+        &__container {
+            display: flex;
+            flex-direction: column-reverse;
+            background: url("../../../assets/images/auth-bg.svg") no-repeat;
+        }
+
+        &-decoration {
+            display: flex;
+            order: 1;
+            align-items: center;
+            padding: 0rem;
+            width: 100%;
+            height: 80%;
+            border-radius: 0 2rem 2rem 0rem;
+            background: none;
+            background-size: cover;
+    
+    
+            &-informations {
+                width: 100%;
+                height: 100%;
+                order: 2;
+                display: flex;
+                padding: 2rem;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                border: none;
+                border-radius: 20px;
+                background-color: transparent;
+                box-shadow: none;
+                backdrop-filter: blur(5px);
+    
+    
+                &-title, &-subtitle {
+                    color: $color-white;
+                }
             }
         }
     }

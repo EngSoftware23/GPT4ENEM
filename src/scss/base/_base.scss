@@ -7,3 +7,15 @@
 html {
     font-size: 62.5%;
 }
+
+@media screen and (min-width: 1000px) and (max-width: 1600px) {
+    body {
+        zoom: 80%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    body {
+        overflow-x: hidden;
+    }
+}
