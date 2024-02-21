@@ -1,0 +1,27 @@
+<form action="" method="POST" class="authform__container" (ngSubmit)="onSubmit()">
+    <h1>{{ type }}</h1>
+
+    <div class="authform-inputs_container">
+        <input class="authform-input" type="email" [(ngModel)]="email" placeholder="Digite o seu Email" name="email">
+
+        <input class="authform-input" type="password" [(ngModel)]="pswd" placeholder="Digite a sua Senha" name="pswd">
+
+        <input *ngIf="type == 'Cadastro'" class="authform-input" type="password" [(ngModel)]="pswdConfirm" placeholder="Digite a sua Senha" name="pswd-confirm">
+
+        <input class="authform-button authform-button-colored" type="submit" value="Entrar">
+    </div>
+
+    <div class="authform-others">
+        <span class="authform-others-paragraph">ou</span>
+        <app-button text="Entrar com o Google" photoUrl="https://cdn.discordapp.com/attachments/1175567729432993965/1196527872907685928/google-icon.png?ex=65b7f46b&is=65a57f6b&hm=d584dca128157d0212b9c0ef474b54532483212476e76eecf0bc722da7c9d7f6&"></app-button>
+        <p *ngIf="type == 'Login'" class="authform-others-paragraph">Ainda não possui uma conta?
+             <a [routerLink]="['/cadastro']">Clique aqui</a>
+        </p>
+
+        <p *ngIf="type == 'Cadastro'" class="authform-others-paragraph">Já possui uma conta?
+            <a [routerLink]="['/login']">Clique aqui</a>
+       </p>
+    </div>
+   
+</form>
+    
