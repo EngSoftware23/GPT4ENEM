@@ -13,10 +13,16 @@
 
     <div class="authform-others">
         <span class="authform-others-paragraph">ou</span>
+       
+        
 
 
-        <asl-google-signin-button  class="authform-others-google-button" type='standard' size='large' shape="pill" text="continue_with" >
-        </asl-google-signin-button>
+        <div id="g_id_onload"
+        data-client_id="809377463643-0vit2iji3g0ohj7t9mhk293qbn2bc5ne.apps.googleusercontent.com"
+        data-callback="handleCredentialResponse"
+        >
+       </div>
+   <div class="g_id_signin" data-type="standard"></div>
      
         <p *ngIf="type == 'Login'" class="authform-others-paragraph">Ainda não possui uma conta?
              <a [routerLink]="['/cadastro']">Clique aqui</a>
@@ -29,4 +35,4 @@
  
    
 </form>
-<script src="https://accounts.google.com/gsi/client" async></script>
+

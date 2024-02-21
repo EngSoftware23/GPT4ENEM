@@ -1,6 +1,11 @@
-import {  SocialAuthService } from '@abacritt/angularx-social-login';
+
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { jwtDecode } from 'jwt-decode';
+
+declare global {
+  interface Window { handleCredentialResponse: (response: any) => void; }
+}
 
 
 @Component({
@@ -15,16 +20,28 @@ export class AuthFormComponent implements OnInit {
   pswd: string = '';
   pswdConfirm: string = '';
 
+  decodeJwtResponse(credential: string): any {
+    
+    const decodedToken = jwtDecode(credential);
+    
+    return decodedToken;
+  }
 
-  constructor( private authService:SocialAuthService, private router: Router) {}
 
   ngOnInit(): void {
-    this.authService.authState.subscribe((user) => {
-      if (user) {
-        this.router.navigate(['service-page']);
-      }
-    });
+    window.handleCredentialResponse = (response) => {
+      
+        const responsePayload = this.decodeJwtResponse(response.credential);
+
+        console.log("ID: " + responsePayload.sub);
+        console.log('Full Name: ' + responsePayload.name);
+        console.log("Image URL: " + responsePayload.picture);
+        console.log("Email: " + responsePayload.email);
+    };
   }
+
+
+  
 
 
  

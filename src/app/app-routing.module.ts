@@ -5,7 +5,7 @@ import { ServicePageComponent } from './pages/service-page/service-page.componen
 import { AuthGuard } from './guards/auth-guard.guard';
 
 const routes: Routes = [
-  { path: 'service-page', component: ServicePageComponent, pathMatch: 'full' , canActivate: [AuthGuard] },
+  { path: 'service-page', component: ServicePageComponent, pathMatch: 'full' },
   { path: 'login', component: LoginComponent, pathMatch:'full' }
 ];
 

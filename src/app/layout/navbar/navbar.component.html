@@ -41,7 +41,7 @@
         </svg>
     </div>
 
-    <ul class="navbar-list" *ngIf="!user">
+    <ul class="navbar-list" >
         <li class="navbar-list-item">
             <a  class="navbar-list-item-link" href="#our-services">Serviços</a>
         </li>
@@ -56,7 +56,5 @@
         </li>
     </ul>
 
-    <figure class="navbar-icon-user" *ngIf="user" (click)="logout()">
-        <img src="{{ user.photoUrl }}" referrerpolicy="no-referrer" alt="">
-    </figure>
+
 </nav>
