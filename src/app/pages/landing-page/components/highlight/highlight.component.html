@@ -1,0 +1,11 @@
+<section class="hightlight__container">
+
+    <div class="hightlight__container-image" [class.reverse]="reverseStyle">
+        <img src="{{ imageUrl }}" alt="">
+    </div>
+
+    <div class="hightlight__container-informations" [class.reverse]="reverseStyle">
+        <h2 class="hightlight__container-informations-title">{{ title }}</h2>
+        <app-paragraph text="{{ paragraph }}"></app-paragraph>
+    </div>
+</section>
