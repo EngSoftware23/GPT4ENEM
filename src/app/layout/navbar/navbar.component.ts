@@ -48,10 +48,6 @@ export class NavbarComponent  {
       });
 
   }
-  
-
- 
   }
-
-
 }
+
