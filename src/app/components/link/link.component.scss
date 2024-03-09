@@ -1,8 +1,0 @@
-@import "../../../scss/abstracts/mixins.scss";
-
-.link {
-    &__container {
-        @include button;
-        text-decoration: none;
-    }
-}
