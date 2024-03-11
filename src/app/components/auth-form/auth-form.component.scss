@@ -6,27 +6,26 @@
     &__container {
         display: flex;
         flex-direction: column;
-        gap: 2rem;
+        gap: 1.5rem;
         width: 100%;
     }
 
     &-inputs_container {
         display: flex;
         flex-direction: column;
-        gap: 2rem;
+        gap: 1.2rem;
     }
 
     &-input {
         border-radius: 2rem;
-        padding: 1.4rem;
+        font-size: 1.6rem;
+        padding: 1.6rem;
         border: 0.1rem solid $text-gray-light;
         font-size: 1.6rem
     }
 
     &-button {
-        @include button;
-        font-size: 1.6rem;
-        
+        @include button;   
     }
 
     &-others {
@@ -39,16 +38,32 @@
 
         &-paragraph {
             color: $text-gray-light;
+            font-size: 1.6rem;
+        }
+    }
+
+    @media screen and (max-width: 480px) {
+        &-inputs_container {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        &-input {
+            border-radius: 2rem;
+            padding: 1.4rem;
+            border: 0.1rem solid $text-gray-light;
+            width: 100%;
             font-size: 1.5rem;
         }
 
-        &-google-button {
-            zoom: 120%;
-        }
-
-        @media screen and (min-width: 1650px) {
-            &-google-button {
-                zoom: 100%;
+        &-others {
+            gap: 1.5rem;
+           
+            &-paragraph {
+                text-align: center;
+                font-size: 1.5rem;
             }
         }
     }

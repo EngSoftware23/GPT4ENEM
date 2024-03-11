@@ -3,11 +3,13 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
 import { FormsModule } from '@angular/forms';
 import { LoginModule } from './pages/login/login.module';
 import { ServicePageModule } from './pages/service-page/service-page.module';
 import { LayoutModule } from './layout/layout.module';
-
+import { ComponentsModule } from './components/components.module';
+import { LandingPageModule } from './pages/landing-page/landing-page.module';
 
 import { initializeApp } from 'firebase/app';
 import { getAuth } from "firebase/auth";
@@ -37,9 +39,10 @@ const auth = getAuth(app);
     LayoutModule,
     LoginModule,
     ServicePageModule,
+    LandingPageModule,
+    ComponentsModule
   ],
-  providers: [
-  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
