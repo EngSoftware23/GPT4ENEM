@@ -14,11 +14,23 @@
     <div class="authform-others">
         <span class="authform-others-paragraph">ou</span>
        
-        <button (click)="signInWithGoogle()">Conectar com Google</button>
+        <button class="authform-others-button" (click)="signInWithGoogle()">
+            <img class="authform-others-button-img" src="../../../assets/images/google-color-svgrepo-com.svg" alt="">
+            Conectar com Google
+            
+        </button>
 
-        <button (click)="signInWithMicrosoft()">Conectar com Microsoft</button>
+        <button class="authform-others-button" (click)="signInWithMicrosoft()">
+            <img class="authform-others-button-img" src="../../../assets/images/microsoft-svgrepo-com.svg" alt="">
+            Conectar com Microsoft
+            
+        </button>
 
-        <button (click)="signInWithFacebook()">Conectar com Facebook</button>
+        <button class="authform-others-button" (click)="signInWithFacebook()">
+            <img class="authform-others-button-img" src="../../../assets/images/facebook-color-svgrepo-com.svg" alt="">
+            Conectar com Facebook
+           
+        </button>
         
      
         <p *ngIf="type == 'Login'" class="authform-others-paragraph">Ainda não possui uma conta?

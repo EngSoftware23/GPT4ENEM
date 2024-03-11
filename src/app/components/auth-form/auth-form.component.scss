@@ -31,7 +31,7 @@
     &-others {
         display: flex;
         flex-direction: column;
-        gap: 3rem;
+        gap: 1.5rem;
         justify-content: center;
         align-items: center;
         width: 100%;
@@ -39,6 +39,28 @@
         &-paragraph {
             color: $text-gray-light;
             font-size: 1.6rem;
+        }
+
+        &-button {
+            padding: 1rem;
+            cursor: pointer;
+            width: 25rem;
+            border: .1rem solid $color-black;
+            border-radius: 5rem;
+            background-color: rgba(255, 255, 255, 0.45);
+            
+            backdrop-filter: blur(5px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            font-weight: 500;
+            font-size: 1.6rem;
+
+
+            &-img {
+                width: 2.5rem;
+            }
         }
     }
 
