@@ -1,12 +1,12 @@
-<form method="POST" class="authform__container" (ngSubmit)="onSubmit($event)">
+<form method="POST" [formGroup]="authForm" (ngSubmit)="signInWithEmailAndPassword" class="authform__container">
     <h1>{{ type }}</h1>
 
     <div class="authform-inputs_container">
-        <input class="authform-input" type="email" [(ngModel)]="email" placeholder="Digite o seu Email" name="email">
+        <input class="authform-input" type="email" formControlName="email" placeholder="Digite o seu Email" name="email">
 
-        <input class="authform-input" type="password" [(ngModel)]="pswd" placeholder="Digite a sua Senha" name="pswd">
+        <input class="authform-input" type="password" formControlName="pswd" placeholder="Digite a sua Senha" name="pswd">
 
-        <input *ngIf="type == 'Cadastro'" class="authform-input" type="password" [(ngModel)]="pswdConfirm" placeholder="Digite a sua Senha" name="pswd-confirm">
+        <input *ngIf="type == 'Cadastro'" class="authform-input" type="password" formControlName="pswdConfirm" placeholder="Digite a sua Senha" name="pswd-confirm">
 
         <input class="authform-button authform-button-colored" type="submit" value="Entrar">
     </div>
@@ -14,15 +14,12 @@
     <div class="authform-others">
         <span class="authform-others-paragraph">ou</span>
        
+        <button (click)="signInWithGoogle()">Conectar com Google</button>
+
+        <button (click)="signInWithMicrosoft()">Conectar com Microsoft</button>
+
+        <button (click)="signInWithFacebook()">Conectar com Facebook</button>
         
-
-
-        <div id="g_id_onload"
-        data-client_id="809377463643-0vit2iji3g0ohj7t9mhk293qbn2bc5ne.apps.googleusercontent.com"
-        data-callback="handleCredentialResponse"
-        >
-       </div>
-   <div class="g_id_signin" data-type="standard"></div>
      
         <p *ngIf="type == 'Login'" class="authform-others-paragraph">Ainda não possui uma conta?
              <a [routerLink]="['/cadastro']">Clique aqui</a>
@@ -35,4 +32,3 @@
  
    
 </form>
-

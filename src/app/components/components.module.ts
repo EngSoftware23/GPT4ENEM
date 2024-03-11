@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AuthFormComponent } from './auth-form/auth-form.component';
 import { ButtonComponent } from './button/button.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {  RouterModule } from '@angular/router';
 
 @NgModule({
@@ -16,7 +16,7 @@ import {  RouterModule } from '@angular/router';
   ],
   imports: [
     CommonModule,
-    FormsModule,
+    ReactiveFormsModule,
     RouterModule,
 
   ],
