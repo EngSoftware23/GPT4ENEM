@@ -28,13 +28,9 @@ mainRouter.get('/login/analise', (req: Request, res: Response) => {
     res.send('Página de análise');
 });
 
+mainRouter.post('/trascricao', downloadController.downloadAudio)
 
-
-mainRouter.post('/transcricao', (req: Request, res: Response) => {
-    res.send('hello')
-});
-
-mainRouter.post('/download', downloadController.downloadAudio)
+mainRouter.post('/revisao', downloadController.downloadAudio)
 
 mainRouter.use((req: Request, res: Response) => {
     res.status(404).send('Página não encontrada!');

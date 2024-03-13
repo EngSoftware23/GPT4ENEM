@@ -1,6 +1,7 @@
 import { error } from 'console';
 import express, { Request, Response } from 'express';
 import { sendAudioToWhisper } from '../services/whisperService';
+import { sendTranscriptionToGPT } from '../services/gpt3Service';
 
 
 const ytdl = require('ytdl-core');
@@ -30,7 +31,13 @@ export const downloadAudio = async (req: Request, res: Response) => {
         console.log('[FINISHED_DOWNLOAD]');
         try {
           const transcription = await sendAudioToWhisper(audioPath);
-          res.status(200).send(`Áudio baixado e enviado com sucesso para o Whisper ${transcription.text}`);
+          if (req.originalUrl === `/revisao?videoId=${videoId}`) {
+            const revisao = await sendTranscriptionToGPT(transcription.text);
+            res.status(200).send(revisao)
+        } else { 
+            res.status(200).send(`Áudio baixado e enviado com sucesso para o Whisper ${transcription.text}`);
+        }
+          
         } catch (error) {
           console.error('[ERROR_WHISPER_API]', error);
           res.status(500).json({ error: 'Erro ao enviar o áudio para o Whisper' });
