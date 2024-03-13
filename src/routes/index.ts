@@ -1,10 +1,11 @@
-import { Console } from 'console';
-import express, {Router, Request, Response} from 'express';
+import express, { Router, Request, Response } from 'express';
+
+const downloadController = require('../controllers/downloadController');
 
 const mainRouter = Router();
 
 mainRouter.get('/', (req: Request, res: Response) => {
-    console.log('Requisição recebida');
+    res.send('Requisição recebida');
 });
 
 mainRouter.get('/login', (req: Request, res: Response) => {
@@ -27,8 +28,16 @@ mainRouter.get('/login/analise', (req: Request, res: Response) => {
     res.send('Página de análise');
 });
 
-mainRouter.use(((req:Request, res:Response)=>{
-    res.status(404).send('Página não encontrada!')
-}));
+
+
+mainRouter.post('/transcricao', (req: Request, res: Response) => {
+    res.send('hello')
+});
+
+mainRouter.post('/download', downloadController.downloadAudio)
+
+mainRouter.use((req: Request, res: Response) => {
+    res.status(404).send('Página não encontrada!');
+});
 
 export default mainRouter;
