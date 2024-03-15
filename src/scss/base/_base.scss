@@ -10,10 +10,12 @@ html {
 
 body {
     background: darken(white, 10%);
+    
+   
 }
 
-@media screen and (min-width: 1000px) and (max-width: 1600px) {
+@media screen and (min-width: 1600px) {
     body {
-        zoom: 80%;
+        zoom: 120%;
     }
 }

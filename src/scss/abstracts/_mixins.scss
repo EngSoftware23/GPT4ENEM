@@ -9,6 +9,7 @@
     width: fit-content;
     border-radius: 5rem;
     transition: 200ms;
+    cursor: pointer;
 
     &-primary-color {
         background: linear-gradient(90deg, rgba(145,129,244,1) 0%, rgba(80,56,237,1) 100%);

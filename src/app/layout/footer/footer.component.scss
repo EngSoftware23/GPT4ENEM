@@ -1,6 +1,8 @@
+@import '../../../scss/abstracts/variables';
+
 .footer {
     &__container {
-        background-color: #5B9BF3;
+        background-color: $color-highlight;
         padding: 5% 10%;
         color: white;
         display: grid;

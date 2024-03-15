@@ -6,12 +6,12 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        height: 10rem;
+        padding: 3rem 0;
     }
 
     &-logo {
         & svg {
-            width: 75%;
+            width: 70%;
             fill: #8F7EF3;
         }
     }
