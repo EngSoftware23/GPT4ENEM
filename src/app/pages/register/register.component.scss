@@ -1,37 +1,93 @@
+@import '../../../scss/abstracts/variables';
+
 .register {
     &__container{
-        display: flex;
-        width: 100vw;
-        height: 100vh;
-        justify-content: center; 
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding: 0 $padding-sides;
+        min-height: 100vh;
         align-items: center;
-        background-color: aqua;
-        padding: 0 10%;
+        justify-content: center;     
+        
+    }
+
+    @media screen and (min-width: 1000px) and (max-width: 1600px) {
+        &__container {
+            min-height: 125vh;
+        }
     }
 
     &-informations{
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        height: 80%;
         width: 100%;
-        
-        &-form{
-            background-color: white;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            border-radius: 2rem 0rem 0rem 2rem;
-        }
+        height: 100%;
+        display: flex;
+        padding: 2rem;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid rgba(255, 255, 255, .25);
+        border-radius: 20px;
+        background-color: rgba(255, 255, 255, 0.45);
+        box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
+        backdrop-filter: blur(5px);
 
+        &-title, &-subtitle {
+            color: $color-white;
+        }
+      
         &-decoretion{
-            background: url("../../../assets/images/auth-bg.svg");
-            height: 100%;
-            border-radius: 0rem 2rem 2rem 0rem;
-            
+            display: flex;
+            align-items: center;
+            padding: 10rem;
+            width: 100%;
+            height: 80%;
+            border-radius: 0 2rem 2rem 0rem;
+            background: url("../../../assets/images/auth-bg.svg") no-repeat;
+            background-size: cover;
         }
+    }
 
+
+
+    @media screen and (max-width: 480px) {
+        &__container {
+            display: flex;
+            flex-direction: column-reverse;
+            background: url("../../../assets/images/auth-bg.svg") no-repeat;
+            background-size: cover;
+        }
+        
+    &-informations {
+        width: 100%;
+        height: 100%;
+        order: 2;
+        display: flex;
+        padding: 2rem;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border: none;
+        border-radius: 20px;
+        background-color: transparent;
+        box-shadow: none;
+        backdrop-filter: blur(5px);
+
+
+        &-title, &-subtitle {
+            color: $color-white;
+        }
+        
+            &-decoration {
+                display: flex;
+                order: 1;
+                align-items: center;
+                padding: 0rem;
+                width: 100%;
+                height: 80%;
+                border-radius: 0 2rem 2rem 0rem;
+                background: none;
+                background-size: cover;
+            }
+        }
     }
 }
-
