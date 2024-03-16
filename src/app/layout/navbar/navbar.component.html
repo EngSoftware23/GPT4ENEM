@@ -41,18 +41,30 @@
         </svg>
     </div>
 
+
+    <div class="navbar-mobile-bars" (click)="toogleMenu()">
+        <img class="navbar-mobile-bars-icon" src="../../../assets/images/bars-solid.svg" alt="">
+    </div>
+
     <ul class="navbar-list">
         <li class="navbar-list-item">
-            <a  class="navbar-list-item-link" href="#our-services">Serviços</a>
+            <a  class="navbar-list-item-link" href="#our-services">
+                Serviços
+            </a>
         </li>
         <li class="navbar-list-item">
-            <a  class="navbar-list-item-link" href="#about">Sobre</a>
+            <a  class="navbar-list-item-link" href="#about">
+                Sobre
+            </a>
         </li>
         <li class="navbar-list-item">
-            <a  class="navbar-list-item-link" href="#benefits">Beneficios</a>
+            <a  class="navbar-list-item-link" href="#benefits">
+                Beneficios
+            </a>
         </li>
         <li class="navbar-list-button">
-            <a  class="navbar-list-button-link navbar-list-button-link-primary-color" href="">Entrar</a>
+            <app-link linkUrl="/login" linkText="Entrar"></app-link>
         </li>
     </ul>
 </nav>
+

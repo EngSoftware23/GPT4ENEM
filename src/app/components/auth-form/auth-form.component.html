@@ -1,0 +1,46 @@
+<form method="POST" [formGroup]="authForm" (ngSubmit)="signInWithEmailAndPassword" class="authform__container">
+    <h1>{{ type }}</h1>
+
+    <div class="authform-inputs_container">
+        <input class="authform-input" type="email" formControlName="email" placeholder="Digite o seu Email" name="email">
+
+        <input class="authform-input" type="password" formControlName="pswd" placeholder="Digite a sua Senha" name="pswd">
+
+        <input *ngIf="type == 'Cadastro'" class="authform-input" type="password" formControlName="pswdConfirm" placeholder="Digite a sua Senha" name="pswd-confirm">
+
+        <input class="authform-button authform-button-colored" type="submit" value="Entrar">
+    </div>
+
+    <div class="authform-others">
+        <span class="authform-others-paragraph">ou</span>
+       
+        <button class="authform-others-button" (click)="signInWithGoogle()">
+            <img class="authform-others-button-img" src="../../../assets/images/google-color-svgrepo-com.svg" alt="">
+            Conectar com Google
+            
+        </button>
+
+        <button class="authform-others-button" (click)="signInWithMicrosoft()">
+            <img class="authform-others-button-img" src="../../../assets/images/microsoft-svgrepo-com.svg" alt="">
+            Conectar com Microsoft
+            
+        </button>
+
+        <button class="authform-others-button" (click)="signInWithFacebook()">
+            <img class="authform-others-button-img" src="../../../assets/images/facebook-color-svgrepo-com.svg" alt="">
+            Conectar com Facebook
+           
+        </button>
+        
+     
+        <p *ngIf="type == 'Login'" class="authform-others-paragraph">Ainda não possui uma conta?
+             <a [routerLink]="['/cadastro']">Clique aqui</a>
+        </p>
+
+        <p *ngIf="type == 'Cadastro'" class="authform-others-paragraph">Já possui uma conta?
+            <a [routerLink]="['/login']">Clique aqui</a>
+       </p>
+    </div>
+ 
+   
+</form>

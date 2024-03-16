@@ -3,6 +3,7 @@
 @import "scss/abstracts/mixins";
 @import "scss/base/typografy";
 
+
 body {
     &::-webkit-scrollbar {
         width: .8rem;
@@ -16,3 +17,35 @@ body {
         border: 0.1rem solid $color-white   
       }
 }
+
+.form {
+    &__container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        background-color: $color-white;
+        height: 80%;
+        border-radius: 2rem 0rem 0rem 2rem;
+        padding: 6rem;
+    }
+
+    @media screen and (max-width: 480px) {
+        &__container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            background-color: $color-white;
+            height: auto;
+            border-radius: 2rem 2rem 0rem 0rem;
+            padding: 4rem;
+            padding: 3rem 4rem;
+            padding-bottom: 5rem;
+        }
+    }
+}
+
+

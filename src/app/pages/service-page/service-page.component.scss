@@ -1,3 +1,4 @@
+
 @import '../../../scss/abstracts/mixins';
 @import '../../../scss/abstracts/variables';
 
@@ -6,7 +7,7 @@
         display: flex;
         flex-direction: column;
         padding: 0% 10%;
-        
+      
         &-form {
             display: flex;
             flex-direction: column;
@@ -223,6 +224,5 @@
             }
         }
     }
-
 
 }

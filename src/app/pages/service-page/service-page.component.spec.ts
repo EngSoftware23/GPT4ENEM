@@ -6,10 +6,13 @@ describe('ServicePageComponent', () => {
   let component: ServicePageComponent;
   let fixture: ComponentFixture<ServicePageComponent>;
 
-  beforeEach(() => {
-    TestBed.configureTestingModule({
-      declarations: [ServicePageComponent]
-    });
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      imports: [ServicePageComponent]
+    })
+    .compileComponents();
+    
+
     fixture = TestBed.createComponent(ServicePageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
