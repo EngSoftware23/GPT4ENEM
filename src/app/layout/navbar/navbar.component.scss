@@ -3,18 +3,19 @@
 @import '../../../scss/base/animations';
 
 
+
 .navbar {
     &__container {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        height: 10rem;
+        padding: 3rem 0;
         overflow-x: hidden;
     }
 
     &-logo {
         & svg {
-            width: 75%;
+            width: 70%;
             fill: #8F7EF3;
         }
     }

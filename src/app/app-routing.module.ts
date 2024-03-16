@@ -9,7 +9,7 @@ import { AuthGuard } from './guards/auth-guard.guard';
 const routes: Routes = [
   { path: 'service-page', component: ServicePageComponent, pathMatch: 'full' },
   { path: 'login', component: LoginComponent, pathMatch:'full' },
-  {path: '', component: LandingPageComponent, pathMatch: 'full'}
+  { path: '', component: LandingPageComponent, pathMatch: 'full' }
 ];
 
 @NgModule({

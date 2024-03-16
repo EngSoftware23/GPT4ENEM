@@ -12,6 +12,7 @@ describe('ServicePageComponent', () => {
     })
     .compileComponents();
     
+
     fixture = TestBed.createComponent(ServicePageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+
 import { FormsModule } from '@angular/forms';
 import { LoginModule } from './pages/login/login.module';
 import { ServicePageModule } from './pages/service-page/service-page.module';
@@ -28,6 +29,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,12 +37,14 @@ const auth = getAuth(app);
   imports: [
     BrowserModule,
     AppRoutingModule,
+
     FormsModule,
     LayoutModule,
     LoginModule,
     ServicePageModule,
     LandingPageModule,
     ComponentsModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

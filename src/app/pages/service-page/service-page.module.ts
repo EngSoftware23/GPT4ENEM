@@ -1,19 +1,21 @@
-import { NgModule } from '@angular/core';
+
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ServicePageComponent } from './service-page.component';
 import { LayoutModule } from 'src/app/layout/layout.module';
-import { ServiceFormComponent } from './sections/service-form/service-form.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
 @NgModule({
   declarations: [
     ServicePageComponent,
-    ServiceFormComponent
   ],
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
   imports: [
     CommonModule,
-    LayoutModule
+    LayoutModule,
+    ReactiveFormsModule
   ]
 })
 export class ServicePageModule { }
