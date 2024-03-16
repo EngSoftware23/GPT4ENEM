@@ -1,9 +1,29 @@
-<form class="authform__container" action="" method="post">
-    <h1 class="authform-title">{{type}}</h1>
-    <div class="authform-data">
-        <input class="authform-data-input" type="email" placeholder="digite seu email">
-        <input class="authform-data-input" type="password" placeholder="digite sua senha">
-        <input class="authform-data-input" type="password" placeholder="confirme sua senha">
-        <input class="authform-data-button" type="submit" value="Cadastrar">
+<form method="POST" class="authform__container">
+    <h1>{{ type }}</h1>
+
+    <div class="authform-inputs_container">
+        <input class="authform-input" type="email" formControlName="email" placeholder="Digite o seu Email" name="email">
+
+        <input class="authform-input" type="password" formControlName="pswd" placeholder="Digite a sua Senha" name="pswd">
+
+        <input *ngIf="type == 'Cadastro'" class="authform-input" type="password" formControlName="pswdConfirm" placeholder="Digite a sua Senha" name="pswd-confirm">
+
+        <input class="authform-button authform-button-colored" type="submit" value="Entrar">
     </div>
+
+    <div class="authform-others">
+        <span class="authform-others-paragraph">ou</span>
+       
+        
+     
+        <p *ngIf="type == 'Login'" class="authform-others-paragraph">Ainda não possui uma conta?
+             <a [routerLink]="['/register']">Clique aqui</a>
+        </p>
+
+        <p *ngIf="type == 'Cadastro'" class="authform-others-paragraph">Já possui uma conta?
+            <a >Clique aqui</a>
+       </p>
+    </div>
+ 
+   
 </form>

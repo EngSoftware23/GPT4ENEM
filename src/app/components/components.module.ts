@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AuthFormComponent } from './auth-form/auth-form.component';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -14,7 +15,8 @@ import { AuthFormComponent } from './auth-form/auth-form.component';
   ],
 
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule
   ]
 })
 export class ComponentsModule { }

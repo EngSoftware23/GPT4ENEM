@@ -16,7 +16,7 @@ import { ComponentsModule } from 'src/app/components/components.module';
 
   imports: [
     CommonModule,
-    ComponentsModule
+    ComponentsModule,
   ]
 })
 export class RegisterModule { }
