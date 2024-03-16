@@ -35,7 +35,7 @@ export const downloadAudio = async (req: Request, res: Response) => {
             const revisao = await sendTranscriptionToGPT(transcription.text);
             res.status(200).send(revisao)
         } else { 
-            res.status(200).send(`Áudio baixado e enviado com sucesso para o Whisper ${transcription.text}`);
+            res.status(200).send(`${transcription.text}`);
         }
           
         } catch (error) {
