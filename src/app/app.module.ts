@@ -1,8 +1,12 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { RegisterComponent } from './pages/register/register.component';
+import { AuthFormComponent } from './components/auth-form/auth-form.component';
+import { ComponentsModule } from './components/components.module';
+import { RegisterModule } from './pages/register/register.module';
 
 
 import { FormsModule } from '@angular/forms';
@@ -37,14 +41,13 @@ const auth = getAuth(app);
   imports: [
     BrowserModule,
     AppRoutingModule,
-
+    RegisterModule,
     FormsModule,
     LayoutModule,
     LoginModule,
     ServicePageModule,
     LandingPageModule,
     ComponentsModule
-
   ],
   providers: [],
   bootstrap: [AppComponent]
