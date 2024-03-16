@@ -11,7 +11,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class ServicePageComponent   {
   serviceForm: FormGroup;
   videoId:string | null = '';
-  displayLoading:boolean = true;
+  displayLoading:boolean = false;
   textsLoading: string[] = ['Espere um momento 😀', 'Assistindo a Aula 🧐', 'Aprendendo o Assunto 🫡', 'Criando o Resumo 😎', 'Enviando pra Você ✅']
   textDisplayIndex: number = 0;
   textDisplay: string = this.textsLoading[this.textDisplayIndex]
