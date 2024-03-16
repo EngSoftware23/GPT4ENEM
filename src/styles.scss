@@ -3,6 +3,21 @@
 @import "scss/abstracts/mixins";
 @import "scss/base/typografy";
 
+
+body {
+    &::-webkit-scrollbar {
+        width: .8rem;
+      }
+      &::-webkit-scrollbar-track {
+        background: transparent;        
+      }
+      &::-webkit-scrollbar-thumb {
+        background: $color-highlight;
+        border-radius: 2rem;   
+        border: 0.1rem solid $color-white   
+      }
+}
+
 .form {
     &__container {
         display: flex;

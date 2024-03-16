@@ -1,4 +1,4 @@
-<form method="POST" class="authform__container">
+<form method="POST" [formGroup]="authForm" (ngSubmit)="signInWithEmailAndPassword" class="authform__container">
     <h1>{{ type }}</h1>
 
     <div class="authform-inputs_container">
@@ -14,6 +14,23 @@
     <div class="authform-others">
         <span class="authform-others-paragraph">ou</span>
        
+        <button class="authform-others-button" (click)="signInWithGoogle()">
+            <img class="authform-others-button-img" src="../../../assets/images/google-color-svgrepo-com.svg" alt="">
+            Conectar com Google
+            
+        </button>
+
+        <button class="authform-others-button" (click)="signInWithMicrosoft()">
+            <img class="authform-others-button-img" src="../../../assets/images/microsoft-svgrepo-com.svg" alt="">
+            Conectar com Microsoft
+            
+        </button>
+
+        <button class="authform-others-button" (click)="signInWithFacebook()">
+            <img class="authform-others-button-img" src="../../../assets/images/facebook-color-svgrepo-com.svg" alt="">
+            Conectar com Facebook
+           
+        </button>
         
      
         <p *ngIf="type == 'Login'" class="authform-others-paragraph">Ainda não possui uma conta?
@@ -21,7 +38,7 @@
         </p>
 
         <p *ngIf="type == 'Cadastro'" class="authform-others-paragraph">Já possui uma conta?
-            <a >Clique aqui</a>
+            <a [routerLink]="['/login']">Clique aqui</a>
        </p>
     </div>
  

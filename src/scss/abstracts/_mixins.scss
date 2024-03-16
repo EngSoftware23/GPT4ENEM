@@ -12,12 +12,12 @@
     width: fit-content;
     border-radius: 5rem;
     transition: 200ms;
+    cursor: pointer;
 
     &-primary-color {
         background: linear-gradient(90deg, rgba(145,129,244,1) 0%, rgba(80,56,237,1) 100%);
         color: white;
     }
-
 
     &-colored:hover {
         transform: translateY(-0.3rem);
@@ -32,5 +32,4 @@
         transform: translateY(-0.3rem);
         box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
     }
-
 }

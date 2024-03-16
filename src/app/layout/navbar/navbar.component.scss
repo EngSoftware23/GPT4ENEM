@@ -1,0 +1,104 @@
+@import '../../../scss/abstracts/variables';
+@import '../../../scss/abstracts/mixins';
+@import '../../../scss/base/animations';
+
+
+
+.navbar {
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 3rem 0;
+        overflow-x: hidden;
+    }
+
+    &-logo {
+        & svg {
+            width: 70%;
+            fill: #8F7EF3;
+        }
+    }
+
+    &-mobile-bars {
+        display: none;
+    }
+
+    &-list {
+        display: flex;
+        justify-content: space-between;
+        list-style: none;
+        gap: 2rem;
+
+        &-item {
+            &-link {
+                text-decoration: none;
+                color: black;
+                position: relative;
+
+                &:hover {
+                    &::after {
+                        display: block;
+                        position: absolute;
+                        content: '';
+                        width: 100%;
+                        height: .5rem;
+                        border-radius: 2rem;
+                        background-color: #8F7EF3;
+                        animation: .4s increaseSubilinear;
+                    }
+                }
+            }
+        }
+
+        &-button {
+            &-link {
+                @include button;
+                text-decoration: none;
+            }
+        }
+    }
+
+    @media screen and (max-width: 480px) {
+        &-logo {
+            & svg {
+                width: 60%;
+                fill: #8F7EF3;
+            }
+        }
+
+        &-mobile-bars {
+            display: block;
+            position: relative;
+            z-index: 300;
+
+            &-icon {
+                width: 3rem;
+                fill: black;
+            }
+        }
+        &-list {
+            position: absolute;
+            height: 100vh;
+            width: 100%;
+            background-color: white;
+            z-index: 10;
+            bottom: 0;
+            left: 100%;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 3rem;
+            
+
+            &.active {
+                animation: .5s slideToRight ease-in-out;
+                left: 0;
+            }
+
+            &.deactive {
+                animation: .5s slideToLeft ease-in-out;
+            }
+        }
+    }
+}
