@@ -2,24 +2,14 @@ import admin from "../services/serviceFirebase";
 
 const db = admin.firestore();
 
-//Salvar os dados no banco de dados Firestore
-export async function createTestData() {
-    const testData = [
-        { name: 'Test Name 1', description: 'Test Description 1' },
-        { name: 'Test Name 2', description: 'Test Description 2' },
-        // Adicione mais objetos aqui se quiser criar mais documentos
-    ];
+export const saveToFirestore = async (transcription: string, gptResponse: string) => {
+    const firstSentence = gptResponse.split('.')[0];
+    const docRef = db.collection('respostas').doc(); // Cria um novo documento com um ID gerado automaticamente
+    await docRef.set({
+        transcription: transcription,
+        gptResponse: gptResponse,        
+        firstSentence: firstSentence, // Salva a primeira frase
 
-    for (const data of testData) {
-        const docRef = db.collection('testCollection').doc();
-
-        await docRef.set({
-            ...data,
-            created: admin.firestore.FieldValue.serverTimestamp(),
-        });
-
-        console.log(`Test document created with ID: ${docRef.id}`);
-    }
-}
-
-export default createTestData().catch(console.error);
+        timestamp: admin.firestore.FieldValue.serverTimestamp() // Adiciona um timestamp do servidor
+    });
+};

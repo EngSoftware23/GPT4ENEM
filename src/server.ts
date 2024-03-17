@@ -4,6 +4,7 @@ import { createTestData } from './database/firestoreDatabase';
 import OpenAI from 'openai';
 
 
+
 const app: Express = express();
 
 app.use(express.json());
