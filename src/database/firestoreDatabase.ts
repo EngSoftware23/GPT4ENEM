@@ -2,14 +2,36 @@ import admin from "../services/serviceFirebase";
 
 const db = admin.firestore();
 
-export const saveToFirestore = async (transcription: string, gptResponse: string) => {
+export const saveToFirestore = async (userId: string, transcription: string, gptResponse: string) => {
     const firstSentence = gptResponse.split('.')[0];
-    const docRef = db.collection('respostas').doc(); // Cria um novo documento com um ID gerado automaticamente
+    
+    //Gerar um ID único para cada registro do usuário
+    const docId = db.collection('respostas').doc().id;
+
+    //Referência para o documento do usuário
+    const userDocRef = db.collection('respostas').doc(userId);
+
+    //Criar uma coleção dentro do documento do usuário
+    const userCollectionRef = userDocRef.collection('registros');
+
+    //Criar um documento dentro da coleção do usuário
+    const docRef = userCollectionRef.doc(docId);
+
+    /*ex:
+    respostas
+        - userId
+            - registros
+                - docId
+                    - transcription: "..."
+                    - gptResponse: "..."
+                    - firstSentence: "..."
+                    - timestamp: ...
+    */
+
     await docRef.set({
         transcription: transcription,
-        gptResponse: gptResponse,        
-        firstSentence: firstSentence, // Salva a primeira frase
-
-        timestamp: admin.firestore.FieldValue.serverTimestamp() // Adiciona um timestamp do servidor
+        gptResponse: gptResponse,
+        firstSentence: firstSentence,
+        timestamp: admin.firestore.FieldValue.serverTimestamp()
     });
 };

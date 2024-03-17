@@ -8,7 +8,7 @@ const openai = new OpenAI({
     apiKey: process.env.OPEN_AI_KEY
 });
 
-export const sendTranscriptionToGPT = async (transcription: string, promptTemplate: string) => {
+export const sendTranscriptionToGPT = async (uid: string, transcription: string, promptTemplate: string) => {
     try {
         const prompt = `${promptTemplate} \n ${transcription}`;
 
@@ -24,7 +24,7 @@ export const sendTranscriptionToGPT = async (transcription: string, promptTempla
 
 
         // Salvar a resposta no Firestore
-        await saveToFirestore(transcription, gptResponseContent);
+        await saveToFirestore(uid,transcription, gptResponseContent);
 
         return response.choices[0];
 
