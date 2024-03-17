@@ -1,6 +1,13 @@
 FROM node:latest
-WORKDIR /GPT4ENEM
+
+WORKDIR /src
+
+COPY package*.json ./
+
+RUN npm install --silent --production
+
 COPY . .
-RUN npm install --silence --production
-CMD ["npm", "start-dev"]
+
+CMD ["npm", "start"]
+
 EXPOSE 3000
