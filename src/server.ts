@@ -4,7 +4,6 @@ import mainRouter from "./routes";
 
 const app: Express = express();
 
-
 app.use(mainRouter);
 
 app.listen(80, () => {
