@@ -32,9 +32,13 @@ export const downloadAudio = async (req: Request, res: Response) => {
         try {
           const transcription = await sendAudioToWhisper(audioPath);
           if (req.originalUrl === `/revisao?videoId=${videoId}`) {
-            const revisao = await sendTranscriptionToGPT(transcription.text);
+            const revisao = await sendTranscriptionToGPT(transcription.text, 'A seguinte video-aula aborda conteúdos relevantes para o ENEM? Por favor, explique porque sim e que tipo de conteudo é esse ou por que não cai.');
             res.status(200).send(revisao)
-        } else { 
+        } else if(req.originalUrl === `/resumo?videoId=${videoId}`){
+            const resumo = await sendTranscriptionToGPT(transcription.text, 'Faça uma resumo academico desse texto separando os conteudos em subtopicos e dando um explicação detalhada do que foi abordado');
+            res.status(200).send(resumo)
+        }
+        else { 
             res.status(200).send(`${transcription.text}`);
         }
           
