@@ -39,7 +39,8 @@ export const downloadAudio = async (req: Request, res: Response) => {
             res.status(200).send(resumo)
         }
         else { 
-            res.status(200).send(`${transcription.text}`);
+          const transcricao = await sendTranscriptionToGPT(transcription.text, "Repita o que escrevi");
+          res.status(200).send(transcricao);
         }
           
         } catch (error) {
