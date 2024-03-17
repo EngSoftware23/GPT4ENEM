@@ -2,7 +2,7 @@ import admin from "../services/serviceFirebase";
 
 const db = admin.firestore();
 
-export const saveToFirestore = async (transcription: string, gptResponse: string = 'Valor padrão') => {
+export const saveToFirestore = async (transcription: string, gptResponse: string) => {
     const firstSentence = gptResponse.split('.')[0];
     const docRef = db.collection('respostas').doc(); // Cria um novo documento com um ID gerado automaticamente
     await docRef.set({
