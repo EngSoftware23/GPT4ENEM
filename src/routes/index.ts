@@ -11,7 +11,8 @@ const mainRouter = Router();
 mainRouter.get('/', (req: Request, res: Response) => {
 });
 
-mainRouter.get('/login/historico', async (req: Request, res: Response) => {
+mainRouter.get('/login/historico', async (req: Request, res: Response) => {});
+
 
 mainRouter.get('/login/servico', (req: Request, res: Response) => {
 });
