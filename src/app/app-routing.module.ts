@@ -8,7 +8,7 @@ import { RegisterComponent } from './pages/register/register.component';
 import { AuthGuard } from './guards/auth-guard.guard';
 
 const routes: Routes = [
-  { path: 'service-page', component: ServicePageComponent, pathMatch: 'full' },
+  { path: 'service-page', component: ServicePageComponent, pathMatch: 'full', canActivate: [AuthGuard] },
   { path: 'login', component: LoginComponent, pathMatch: 'full' },
   { path: '', component: LandingPageComponent, pathMatch: 'full' },
   { path: "register", component:RegisterComponent, pathMatch:"full" }

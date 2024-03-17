@@ -78,7 +78,7 @@ export class ServicePageComponent   {
     setInterval(() => {
       this.textDisplayIndex = (this.textDisplayIndex + 1) % this.textsLoading.length;
       this.textDisplay = this.textsLoading[this.textDisplayIndex];
-    }, 5000);
+    }, 15000);
   }
 
   

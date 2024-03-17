@@ -9,7 +9,7 @@
         align-items: center;
         gap: 3rem;
         padding-top: 2rem;
-        padding-bottom: 5rem
+        padding-bottom: 3rem
     }
 
     &-paragragh {
@@ -25,9 +25,9 @@
         gap: 3rem;
 
         &-item {
-            display: grid;
-            grid-template-rows: 1fr 0.1fr 0.7fr;
-            gap: 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
             align-items: flex-start;
             justify-content: flex-start;
             background-color: white;

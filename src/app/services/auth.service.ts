@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { error } from 'console';
-import { getAuth, signInWithPopup, GoogleAuthProvider, OAuthProvider, FacebookAuthProvider, signInWithEmailAndPassword, createUserWithEmailAndPassword } from 'firebase/auth';
+import { getAuth, signInWithPopup, GoogleAuthProvider, OAuthProvider, FacebookAuthProvider, signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut } from 'firebase/auth';
+import { environment } from 'src/environments/environment';
 
 
 @Injectable({
@@ -14,6 +15,7 @@ export class AuthService {
   private microsoftProvider = new OAuthProvider('microsoft.com');
   private facebookProvider = new FacebookAuthProvider()
 
+
   constructor() { }
 
   createUserWithEmailAndPasswordForms(email: string, password: string): Promise<void> {
@@ -21,6 +23,7 @@ export class AuthService {
         .then((userCredential) => {
           // Signed in 
           const user = userCredential.user;
+          environment.USER = user
           // ...
         })
         .catch((error) => {
@@ -35,6 +38,7 @@ export class AuthService {
       .then((userCredential) => {
         // Signed in 
         const user = userCredential.user;
+        environment.USER = user
         // ...
       })
       .catch((error) => {
@@ -53,6 +57,13 @@ export class AuthService {
         }
         const user = result.user;
         console.log(user)
+        environment.USER = user
+        if (user.photoURL && user.displayName && user.email) {
+          environment.USER_PHOTO_URL = user.photoURL
+          environment.USER_NAME = user.displayName
+          environment.USER_EMAIL = user.email
+        }
+        
         
       })
       .catch((error) => {
@@ -78,6 +89,8 @@ export class AuthService {
         }
         const user = result.user;
         console.log(user)
+        environment.USER = user
+
       
       })
       .catch((error) => {
@@ -89,21 +102,32 @@ export class AuthService {
     return signInWithPopup(this.auth, this.facebookProvider)
     .then((result) => {
       const user = result.user;
-      console.log(user)
-
-      // This gives you a Facebook Access Token. You can use it to access the Facebook API.
+      environment.USER = user
+     
       const credential = FacebookAuthProvider.credentialFromResult(result);
       if (credential) {
         const accessToken = credential.accessToken;
       }
+      
     })
     .catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;
-      // The email of the user's account used.
+    
       const email = error.customData.email;
-      // The AuthCredential type that was used.
+      
       const credential = FacebookAuthProvider.credentialFromError(error);
     })
   }
+
+  signOutUser(): Promise<void> {
+    return signOut(this.auth)
+      .then(() => {
+        environment.USER = {}
+      })
+      .catch((error) => {
+        
+      });
+  }
+  
 }

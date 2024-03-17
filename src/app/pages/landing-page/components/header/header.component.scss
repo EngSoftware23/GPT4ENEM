@@ -5,27 +5,26 @@
     &__container {
         display: grid;
         grid-template-columns: 1fr 1.7fr;
-        height: 100vh;
+        height: 85vh;
         align-items: center;
         gap: 10rem;
     }
 
-    @media screen and (min-width: 1000px) and (max-width: 1600px) {
-       &__container {
-            height: 112vh;
-       }
-    }    
-    
     &-informations {
         width: 100%;
         display: flex;
         flex-direction: column;
+        justify-content: center;
         gap: 2rem;
     
 
         &-title {
-            font-size: 4rem;
+            font-size: 3.5rem;
             line-height: 5rem;
+
+            &-distint {
+                color: $color-highlight
+            }
         }
 
         &-button {
@@ -36,6 +35,7 @@
 
     &-image {
         width: 100%;
+        text-align: center;
         & img {
             width: 100%;
         }

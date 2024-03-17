@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { AuthFormComponent } from './components/auth-form/auth-form.component';
-import { ComponentsModule } from './components/components.module';
 import { RegisterModule } from './pages/register/register.module';
 
 

@@ -11,6 +11,7 @@ html {
 
 body {
     background: darken(white, 10%);
+    overflow-x: hidden;
 }
 
 @media screen and (min-width: 1600px) {

@@ -5,7 +5,7 @@
 
         <h1 class="service-page__container-form-title">Insira o Link do Youtube</h1>
         <span class="service-page__container-form-subtitle">✨ Veja a mágia acontecer ✨</span>
-        <input formControlName="linkUrl"  class="service-page__container-form-input" type="url" placeholder="Digite o Link do Youtube" required>
+        <input formControlName="linkUrl"  class="service-page__container-form-input" type="url" placeholder="Digite o Link do Youtube 🔗" required>
     
         <span class="service-page__container-form-subtitle service-page__container-form-subtitle-m-top">Escolha o Serviço Desejado:</span>
         <ul class="service-page__container-form-list">
@@ -29,7 +29,7 @@
     </form>
     
     <div class="service-page__container-loading" *ngIf="displayLoading">
-        <dotlottie-player src="../../../assets/Animation - 1710467674958.json" background="transparent" speed="1" class="service-page__container-loading-animation" direction="1" playMode="normal" loop  autoplay></dotlottie-player>
+        <dotlottie-player src="../../../assets/loader.json" background="transparent" speed="1" class="service-page__container-loading-animation" direction="1" playMode="normal" loop  autoplay></dotlottie-player>
         <p class="service-page__container-loading-paragraph">{{ textDisplay }}</p>
     </div>
 </div>

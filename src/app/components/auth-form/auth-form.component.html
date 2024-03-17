@@ -1,33 +1,122 @@
 <form method="POST" [formGroup]="authForm" (ngSubmit)="signInWithEmailAndPassword" class="authform__container">
-    <h1>{{ type }}</h1>
+    <h1 class="authform-title">{{ type }}</h1>
 
-    <div class="authform-inputs_container">
-        <input class="authform-input" type="email" formControlName="email" placeholder="Digite o seu Email" name="email">
+    <div class="authform-inputs__container">
 
-        <input class="authform-input" type="password" formControlName="pswd" placeholder="Digite a sua Senha" name="pswd">
+        <div class="authform-inputs__container-decoration">
+            <input class="authform-inputs__container-decoration-input" type="email" formControlName="email" placeholder="Digite o seu melhor email ✨" name="email">
+            <figure class="authform-inputs__container-decoration-figure">
+                <svg class="authform-inputs__container-decoration-figure-svg" fill="#000000" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+                viewBox="0 0 24 24" xml:space="preserve">
+            <style type="text/css">
+                .st0{fill:none;}
+            </style>
+            <path d="M21,11c0,6.7-4.3,6.4-4.8,6.4c-0.6,0-1.1-0.1-1.6-0.4c-0.4-0.3-0.8-0.6-1-1.1c-0.4,0.5-0.8,0.9-1.3,1.1
+                c-0.5,0.3-1,0.4-1.6,0.4c-0.5,0-1-0.1-1.4-0.3c-0.4-0.2-0.8-0.6-1-1c-0.3-0.4-0.5-0.9-0.6-1.5c-0.1-0.6-0.1-1.3-0.1-2
+                c0.1-0.9,0.3-1.7,0.6-2.5c0.3-0.7,0.7-1.4,1.1-1.9c0.4-0.5,0.9-0.9,1.5-1.2c0.6-0.3,1.2-0.4,1.8-0.4c2,0,3.1,1,3.3,1.2L15.4,14
+                c0,0.4-0.2,1.8,1.1,1.8c0.4,0,2.4-0.5,2.4-4.7c0-0.1,0.9-7-6.6-7C6.3,4,5,9.9,5,12c0,8.4,5.3,8,7,8c2,0,3.1-0.4,3.3-0.5l0.4,1.8
+                C15.5,21.5,14.5,22,12,22c-3.1,0-9-0.1-9-10c0-1.4,0.8-10,9.5-10C20.8,2,21,9.6,21,11z M10.1,12.6c-0.1,0.9,0,1.7,0.2,2.2
+                c0.2,0.5,0.6,0.7,1.2,0.7c1.1,0,1.7-1.4,1.8-1.8l0.5-5.1c-0.1,0-0.7-0.1-0.9-0.1c-0.8,0-1.5,0.4-1.9,1.1
+                C10.5,10.2,10.2,11.2,10.1,12.6z"/>
+            <rect class="st0" width="24" height="24"/>
+                </svg>
+            </figure>
+            
+        </div>
+            
+        <div class="authform-inputs__container-decoration">
+            <input class="authform-inputs__container-decoration-input" type="password" formControlName="pswd" placeholder="Digite a sua melhor senha 🔑" name="pswd">
+            <figure class="authform-inputs__container-decoration-figure">
+                <svg class="authform-inputs__container-decoration-figure-svg" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg"  transform="rotate(-45)matrix(1, 0, 0, -1, 0, 0)">
 
-        <input *ngIf="type == 'Cadastro'" class="authform-input" type="password" formControlName="pswdConfirm" placeholder="Digite a sua Senha" name="pswd-confirm">
+                    <g id="SVGRepo_bgCarrier" stroke-width="0"/>
+                    
+                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+                    
+                    <g id="SVGRepo_iconCarrier"> <path d="M17.408 3.412a1.974 1.974 0 0 0 0-2.82 1.973 1.973 0 0 0-2.819 0l-.29.29-.59-.59a1.009 1.009 0 0 0-1.65.35l-.35-.35a1.004 1.004 0 1 0-1.42 1.42l.35.35a1.033 1.033 0 0 0-.58.58l-.35-.35a1.004 1.004 0 0 0-1.42 1.42L9.879 5.3l-3.02 3.01c-.01.01-.02.03-.03.04A4.885 4.885 0 0 0 5 8a5 5 0 1 0 5 5 4.885 4.885 0 0 0-.35-1.83c.01-.01.03-.02.04-.03l7.718-7.728zM5 15a2 2 0 1 1 0-4 2 2 0 0 1 0 4z"  fill-rule="evenodd"/> </g>
+                    
+                </svg>
+            </figure>
+        </div>
 
-        <input class="authform-button authform-button-colored" type="submit" value="Entrar">
+        <div *ngIf="type == 'Cadastrar'" class="authform-inputs__container-decoration">
+            <input  class="authform-inputs__container-decoration-input" type="password" formControlName="pswdConfirm" placeholder="Confirme a sua Senha 🧐" name="pswd-confirm">
+            <figure class="authform-inputs__container-decoration-figure">
+                <svg fill="#000000" class="authform-inputs__container-decoration-figure-svg" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+
+                    <g id="Password">
+                    
+                    <path d="M391,233.9478H121a45.1323,45.1323,0,0,0-45,45v162a45.1323,45.1323,0,0,0,45,45H391a45.1323,45.1323,0,0,0,45-45v-162A45.1323,45.1323,0,0,0,391,233.9478ZM184.123,369.3794a9.8954,9.8954,0,1,1-9.8964,17.1387l-16.33-9.4287v18.8593a9.8965,9.8965,0,0,1-19.793,0V377.0894l-16.33,9.4287a9.8954,9.8954,0,0,1-9.8964-17.1387l16.3344-9.4307-16.3344-9.4306a9.8954,9.8954,0,0,1,9.8964-17.1387l16.33,9.4282V323.9487a9.8965,9.8965,0,0,1,19.793,0v18.8589l16.33-9.4282a9.8954,9.8954,0,0,1,9.8964,17.1387l-16.3344,9.4306Zm108,0a9.8954,9.8954,0,1,1-9.8964,17.1387l-16.33-9.4287v18.8593a9.8965,9.8965,0,0,1-19.793,0V377.0894l-16.33,9.4287a9.8954,9.8954,0,0,1-9.8964-17.1387l16.3344-9.4307-16.3344-9.4306a9.8954,9.8954,0,0,1,9.8964-17.1387l16.33,9.4282V323.9487a9.8965,9.8965,0,0,1,19.793,0v18.8589l16.33-9.4282a9.8954,9.8954,0,0,1,9.8964,17.1387l-16.3344,9.4306Zm108,0a9.8954,9.8954,0,1,1-9.8964,17.1387l-16.33-9.4287v18.8593a9.8965,9.8965,0,0,1-19.793,0V377.0894l-16.33,9.4287a9.8954,9.8954,0,0,1-9.8964-17.1387l16.3344-9.4307-16.3344-9.4306a9.8954,9.8954,0,0,1,9.8964-17.1387l16.33,9.4282V323.9487a9.8965,9.8965,0,0,1,19.793,0v18.8589l16.33-9.4282a9.8954,9.8954,0,0,1,9.8964,17.1387l-16.3344,9.4306Z"/>
+                    
+                    <path d="M157.8965,143.9487a98.1035,98.1035,0,1,1,196.207,0V214.147h19.793V143.9487a117.8965,117.8965,0,0,0-235.793,0V214.147h19.793Z"/>
+                    
+                    </g>
+                    
+                    </svg>
+            </figure>
+        </div>
+
+        
+
+        <input class="authform-button authform-button-primary-color" type="submit" value="Entrar">
     </div>
 
     <div class="authform-others">
         <span class="authform-others-paragraph">ou</span>
        
         <button class="authform-others-button" (click)="signInWithGoogle()">
-            <img class="authform-others-button-img" src="../../../assets/images/google-color-svgrepo-com.svg" alt="">
+            <svg class="authform-others-button-img" viewBox="-0.5 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    
+                <title>Google-color</title>
+                <desc>Created with Sketch.</desc>
+                <defs>
+            
+            </defs>
+                <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                    <g id="Color-" transform="translate(-401.000000, -860.000000)">
+                        <g id="Google" transform="translate(401.000000, 860.000000)">
+                            <path d="M9.82727273,24 C9.82727273,22.4757333 10.0804318,21.0144 10.5322727,19.6437333 L2.62345455,13.6042667 C1.08206818,16.7338667 0.213636364,20.2602667 0.213636364,24 C0.213636364,27.7365333 1.081,31.2608 2.62025,34.3882667 L10.5247955,28.3370667 C10.0772273,26.9728 9.82727273,25.5168 9.82727273,24" id="Fill-1" fill="#FBBC05">
+            
+            </path>
+                            <path d="M23.7136364,10.1333333 C27.025,10.1333333 30.0159091,11.3066667 32.3659091,13.2266667 L39.2022727,6.4 C35.0363636,2.77333333 29.6954545,0.533333333 23.7136364,0.533333333 C14.4268636,0.533333333 6.44540909,5.84426667 2.62345455,13.6042667 L10.5322727,19.6437333 C12.3545909,14.112 17.5491591,10.1333333 23.7136364,10.1333333" id="Fill-2" fill="#EB4335">
+            
+            </path>
+                            <path d="M23.7136364,37.8666667 C17.5491591,37.8666667 12.3545909,33.888 10.5322727,28.3562667 L2.62345455,34.3946667 C6.44540909,42.1557333 14.4268636,47.4666667 23.7136364,47.4666667 C29.4455,47.4666667 34.9177955,45.4314667 39.0249545,41.6181333 L31.5177727,35.8144 C29.3995682,37.1488 26.7323182,37.8666667 23.7136364,37.8666667" id="Fill-3" fill="#34A853">
+            
+            </path>
+                            <path d="M46.1454545,24 C46.1454545,22.6133333 45.9318182,21.12 45.6113636,19.7333333 L23.7136364,19.7333333 L23.7136364,28.8 L36.3181818,28.8 C35.6879545,31.8912 33.9724545,34.2677333 31.5177727,35.8144 L39.0249545,41.6181333 C43.3393409,37.6138667 46.1454545,31.6490667 46.1454545,24" id="Fill-4" fill="#4285F4">
+            
+            </path>
+                        </g>
+                    </g>
+                </g>
+            </svg>
             Conectar com Google
             
         </button>
 
         <button class="authform-others-button" (click)="signInWithMicrosoft()">
-            <img class="authform-others-button-img" src="../../../assets/images/microsoft-svgrepo-com.svg" alt="">
+            <svg class="authform-others-button-img" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="none"><path fill="#F35325" d="M1 1h6.5v6.5H1V1z"/><path fill="#81BC06" d="M8.5 1H15v6.5H8.5V1z"/><path fill="#05A6F0" d="M1 8.5h6.5V15H1V8.5z"/><path fill="#FFBA08" d="M8.5 8.5H15V15H8.5V8.5z"/></svg>
             Conectar com Microsoft
             
         </button>
 
         <button class="authform-others-button" (click)="signInWithFacebook()">
-            <img class="authform-others-button-img" src="../../../assets/images/facebook-color-svgrepo-com.svg" alt="">
+            <svg class="authform-others-button-img" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    
+                <title>Facebook-color</title>
+                <desc>Created with Sketch.</desc>
+                <defs>
+            
+            </defs>
+                <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                    <g id="Color-" transform="translate(-200.000000, -160.000000)" fill="#4460A0">
+                        <path d="M225.638355,208 L202.649232,208 C201.185673,208 200,206.813592 200,205.350603 L200,162.649211 C200,161.18585 201.185859,160 202.649232,160 L245.350955,160 C246.813955,160 248,161.18585 248,162.649211 L248,205.350603 C248,206.813778 246.813769,208 245.350955,208 L233.119305,208 L233.119305,189.411755 L239.358521,189.411755 L240.292755,182.167586 L233.119305,182.167586 L233.119305,177.542641 C233.119305,175.445287 233.701712,174.01601 236.70929,174.01601 L240.545311,174.014333 L240.545311,167.535091 C239.881886,167.446808 237.604784,167.24957 234.955552,167.24957 C229.424834,167.24957 225.638355,170.625526 225.638355,176.825209 L225.638355,182.167586 L219.383122,182.167586 L219.383122,189.411755 L225.638355,189.411755 L225.638355,208 L225.638355,208 Z" id="Facebook">
+            
+            </path>
+                    </g>
+                </g>
+            </svg>
             Conectar com Facebook
            
         </button>
@@ -37,7 +126,7 @@
              <a [routerLink]="['/register']">Clique aqui</a>
         </p>
 
-        <p *ngIf="type == 'Cadastro'" class="authform-others-paragraph">Já possui uma conta?
+        <p *ngIf="type == 'Cadastrar'" class="authform-others-paragraph">Já possui uma conta?
             <a [routerLink]="['/login']">Clique aqui</a>
        </p>
     </div>

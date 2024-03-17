@@ -11,9 +11,8 @@
         &-form {
             display: flex;
             flex-direction: column;
-            min-height: 100vh;
+            min-height: 85vh;
             gap: 2rem;
-            margin-top: -6rem;
             justify-content: center;
             align-items: center;
 
@@ -32,16 +31,15 @@
                 padding: 1.5rem;
                 font-size: 1.7rem;
                 font-weight: 500;
-                border: none;
+                border: .1rem solid $text-gray-light;
                 width: 50rem;
                 text-align: center;
                 background: $color-white;
                 border-radius: 50rem;
 
                 &:focus {
-                    outline: none;
-                }
-               
+                    outline: .1rem solid $color-highlight;
+                }  
             }
         
             &-button {
@@ -108,8 +106,8 @@
             border-radius: 5rem 5rem 0 0 ;
 
             &-animation {
-                width: 50rem;
-                height: 50rem;
+                width: 55rem;
+                height: 55rem;
             }
 
             &-paragraph {
@@ -125,10 +123,10 @@
             &-form {
                 display: flex;
                 flex-direction: column;
-                min-height: 100vh;
+                min-height: 85vh;
                 width: 100%;
                 gap: 2rem;
-                padding-top: 20rem;
+                padding-top: 5rem;
                 padding-bottom: 5rem;
                 justify-content: center;
                 align-items: center;
@@ -215,7 +213,7 @@
                 }
     
                 &-paragraph {
-                    font-size: 1.8rem;
+                    font-size: 1.6rem;
                     background-color: $color-highlight;
                     color: $color-white;
                     padding: 1.5rem 2rem;

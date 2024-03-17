@@ -45,3 +45,52 @@
         width: 100%;
     }
 }
+
+@keyframes openAside {
+    0% {
+        right: -30%;
+        opacity: 0;
+    }
+
+    100% {
+        right: 0%;
+        opacity: 1;
+    }
+}
+
+@keyframes closeAside {
+    0% {
+        right: 0%;
+        opacity: 1;
+    }
+
+    100% {
+        right: -30%;
+        opacity: 0;
+    }
+}
+
+@keyframes openAsideMobile {
+    0% {
+        right: -90%;
+        opacity: 0;
+    }
+
+    100% {
+        right: 0%;
+        opacity: 1;
+    }
+}
+
+@keyframes closeAsideMobile {
+    0% {
+        right: 0%;
+        opacity: 1;
+    }
+
+    100% {
+        right: -90%;
+        opacity: 0;
+    }
+}
+

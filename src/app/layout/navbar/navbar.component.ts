@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
+import { environment } from 'src/environments/environment';
 
 
 @Component({
@@ -10,8 +12,45 @@ import { Router } from '@angular/router';
 
 
 
-export class NavbarComponent  {
-  
+export class NavbarComponent implements OnInit {
+    userLoggedIn: boolean = false;
+    user: {} = ''
+    userPhotoURL: string = '';
+    userName: string = '';
+    userEmail: string = ''
+    userDropdownOpen: boolean = false;
+    menuBarsDisplayed: boolean = true;
+
+    constructor(private authService: AuthService, private router: Router) {
+      
+    }
+
+    ngOnInit(): void {
+      console.log(environment.USER)
+      this.user = environment.USER
+      this.userPhotoURL = environment.USER_PHOTO_URL
+      this.userName = environment.USER_NAME
+      this.userEmail = environment.USER_EMAIL
+      if( this.user && Object.keys(this.user).length > 0) {
+        this.userLoggedIn = true
+        this.menuBarsDisplayed = false
+      } else {
+        this.userLoggedIn = false
+      }
+    }
+
+  logout(): void {
+    this.authService.signOutUser()
+    .then(() => {
+      this.userLoggedIn = false;
+      this.menuBarsDisplayed = true;
+      this.router.navigate(['/']);
+      
+    })
+    .catch((error) => {
+      console.error(error)
+    })
+  }
 
   toogleMenu() {
     const menuBars = document.querySelector('.navbar-mobile-bars')
@@ -51,7 +90,12 @@ export class NavbarComponent  {
           });
       });
 
+    }
+
   }
+
+  toggleDropDown() {
+    this.userDropdownOpen = !this.userDropdownOpen;
   }
 }
 
