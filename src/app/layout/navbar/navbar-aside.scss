@@ -1,3 +1,6 @@
+@import '../../../scss/abstracts/variables';
+@import '../../../scss/abstracts/mixins';
+@import '../../../scss/base/animations';
 .navbar {
     &-aside {
         position: absolute;

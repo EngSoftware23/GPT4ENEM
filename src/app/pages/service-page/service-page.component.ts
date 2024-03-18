@@ -45,56 +45,59 @@ export class ServicePageComponent   {
       console.log(this.serviceForm.value.linkUrl);
       let linkUrl = this.serviceForm.value.linkUrl;
       this.videoId =  this.extrairIdDoVideo(linkUrl)
-      console.log(this.videoId)
-      this.displayLoading = true;
-      this.displayResults = false;
-      this.displayService = true
+      if (this.videoId) {
+        console.log(this.videoId)
+        this.displayLoading = true;
+        this.displayResults = false;
+        this.displayService = true
+    
+        setTimeout(() => {
+          window.scrollBy({
+            top: window.innerHeight, 
+            behavior: 'smooth' 
+          });
+        }, 500)
+    
+        this.changeTextLoading()
   
-      setTimeout(() => {
-        window.scrollBy({
-          top: window.innerHeight, 
-          behavior: 'smooth' 
-        });
-      }, 500)
+        if (this.selectedItemIndex !== null && this.videoId !== null) {
+          if (this.selectedItemIndex == 0) {
+            this.clientService.postTranscription(this.videoId, environment.USER_UID).subscribe(response => {
+              console.log('Resposta da transcrição:', response);
+              this.serviceResult = response.message.content;
+              this.applyStyles()
+              this.displayLoading = false;
+              this.displayResults = true
+            }, error => {
+              console.error('Erro na transcrição:', error);
+            });
+          } else if (this.selectedItemIndex == 1) {
+            this.clientService.postSummary(this.videoId, environment.USER_UID).subscribe(response => {
+              console.log('Resposta do resumo:', response);
+              this.serviceResult = response.message.content;
+              this.applyStyles()
+              this.displayLoading = false;
+              this.displayResults = true
   
-      this.changeTextLoading()
-
-      if (this.selectedItemIndex !== null && this.videoId !== null) {
-        if (this.selectedItemIndex == 0) {
-          this.clientService.postTranscription(this.videoId, environment.USER_UID).subscribe(response => {
-            console.log('Resposta da transcrição:', response);
-            this.serviceResult = response.message.content;
-            this.applyStyles()
-            this.displayLoading = false;
-            this.displayResults = true
-          }, error => {
-            console.error('Erro na transcrição:', error);
-          });
-        } else if (this.selectedItemIndex == 1) {
-          this.clientService.postSummary(this.videoId, environment.USER_UID).subscribe(response => {
-            console.log('Resposta do resumo:', response);
-            this.serviceResult = response.message.content;
-            this.applyStyles()
-            this.displayLoading = false;
-            this.displayResults = true
-
-          }, error => {
-            console.error('Erro no resumo:', error);
-          });
-        } else if (this.selectedItemIndex == 2) {
-          this.clientService.postReview(this.videoId, environment.USER_UID).subscribe(response => {
-            console.log('Resposta da revisão:', response);
-            this.serviceResult = response.message.content;
-            this.applyStyles()
-            this.displayLoading = false;
-            this.displayResults = true
-          }, error => {
-            console.error('Erro na revisão:', error);
-          });
+            }, error => {
+              console.error('Erro no resumo:', error);
+            });
+          } else if (this.selectedItemIndex == 2) {
+            this.clientService.postReview(this.videoId, environment.USER_UID).subscribe(response => {
+              console.log('Resposta da revisão:', response);
+              this.serviceResult = response.message.content;
+              this.applyStyles()
+              this.displayLoading = false;
+              this.displayResults = true
+            }, error => {
+              console.error('Erro na revisão:', error);
+            });
+          }
+        } else {
+          console.log('Selecione um serviço antes de enviar a solicitação');
         }
-      } else {
-        console.log('Selecione um serviço antes de enviar a solicitação');
       }
+      
     }
   }
 

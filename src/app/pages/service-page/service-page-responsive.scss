@@ -1,3 +1,5 @@
+@import '../../../scss/abstracts/variables';
+
 .service-page {
     &__container {
         @media screen and (min-width: 1600px) {
@@ -56,7 +58,6 @@
                         border: none;
                         font-size: 1.8rem;
                         font-weight: 500;
-                        @include button;
                         margin-top: 2rem;
                     }
                 
@@ -136,10 +137,6 @@
             
                            &-subtitle {
                             font-size: 3rem;
-                           }
-            
-                           &-paragraph {
-                            @include paragraph
                            }
                         }    
                     }
