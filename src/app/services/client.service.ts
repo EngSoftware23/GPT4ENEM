@@ -8,7 +8,7 @@ import { environment } from 'src/environments/environment';
 })
 export class ClientService {
 
-    backendUrl: string = environment.BACKEND_API_REST_URL
+    backendUrl: string | undefined = environment.BACKEND_API_REST_URL
 
     constructor(private http: HttpClient) { }
 
