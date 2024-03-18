@@ -8,27 +8,23 @@ export const saveToFirestore = async (userId: string, transcription: string, gpt
     //Gerar um ID único para cada registro do usuário
     const docId = db.collection('respostas').doc().id;
 
-    //Referência para o documento do usuário
+    /* Referência para o documento do usuário.
+       Nesse caso, se o documento já existir, ele será atualizado,
+       caso contrário, será criado automaticamente. */
     const userDocRef = db.collection('respostas').doc(userId);
 
-    //Criar uma coleção dentro do documento do usuário
-    const userCollectionRef = userDocRef.collection('registros');
+    /* Em vez de criar uma coleção dentro do documento do usuário,
+       vamos criar diretamente o documento sob o userId */
+    const docRef = userDocRef.collection('registros').doc(docId);
 
-    //Criar um documento dentro da coleção do usuário
-    const docRef = userCollectionRef.doc(docId);
-
-    /*ex:
+    /* Agora a estrutura dos dados será:
     respostas
         - userId
-            - registros
-                - docId
-                    - transcription: "..."
-                    - gptResponse: "..."
-                    - firstSentence: "..."
-                    - timestamp: ...
-    
-    
-    */
+            - docId
+                - transcription: "..."
+                - gptResponse: "..."
+                - firstSentence: "..."
+                - timestamp: ... */
 
     await docRef.set({
         transcription: transcription,
