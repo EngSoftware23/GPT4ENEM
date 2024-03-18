@@ -5,14 +5,13 @@ import cors from "cors"; // Importe o módulo cors
 
 const app: Express = express();
 
-const corsOptions = {
-    origin: 'http://localhost:4200/',
-    credentials:true,
-    optionsSuccessStatus: 200
-  }
-  
-  app.use(cors(corsOptions));
+const corsOptions ={
+  origin:'http://localhost:4200/', 
+  credentials:true,
+  optionSuccessStatus:200
+}
 
+app.use(cors(corsOptions));
   
 app.use(mainRouter);
 
