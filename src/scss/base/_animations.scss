@@ -1,10 +1,48 @@
 @keyframes slideToTop {
     0% {
         transform: translateY(10rem);
+        opacity: 0;
     }
 
     100% {
         transform: translateY(0rem);
+        opacity: 1;
+    }
+}
+
+@keyframes slideToDown {
+    0% {
+        transform: translateY(-10rem);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0rem);
+        opacity: 1;
+    }
+}
+
+@keyframes dashToRight {
+    0% {
+        transform: translateX(-10rem);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0rem);
+        opacity: 1;
+    }
+}
+
+@keyframes dashToLeft {
+    0% {
+        transform: translateX(10rem);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0rem);
+        opacity: 1;
     }
 }
 

@@ -58,10 +58,12 @@ export class AuthService {
         const user = result.user;
         console.log(user)
         environment.USER = user
-        if (user.photoURL && user.displayName && user.email) {
+        if (user.photoURL && user.displayName && user.email && user.uid) {
           environment.USER_PHOTO_URL = user.photoURL
           environment.USER_NAME = user.displayName
           environment.USER_EMAIL = user.email
+          environment.USER_UID = user.uid
+
         }
         
         

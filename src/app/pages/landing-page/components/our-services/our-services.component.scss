@@ -1,5 +1,6 @@
 @import '../../../../../scss/abstracts/variables';
 @import '../../../../../scss/abstracts/mixins';
+@import '../../../../../scss/base/animations';
 
 .our-services {
     &__container {
@@ -9,7 +10,8 @@
         align-items: center;
         gap: 3rem;
         padding-top: 2rem;
-        padding-bottom: 3rem
+        padding-bottom: 3rem;
+        animation: .7s slideToTop ease-in-out;
     }
 
     &-paragragh {

@@ -11,6 +11,8 @@
         align-items: center;
         padding: 3rem 0;
         overflow-x: hidden;
+        overflow-y: hidden;
+        animation: .8s slideToDown ease-in-out;
     }
 
     &-logo {

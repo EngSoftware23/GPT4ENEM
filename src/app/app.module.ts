@@ -18,6 +18,7 @@ import { LandingPageModule } from './pages/landing-page/landing-page.module';
 import { initializeApp } from 'firebase/app';
 import { getAuth } from "firebase/auth";
 import { environment } from 'src/environments/environment';
+import { HttpClientModule } from '@angular/common/http';
 
 
 const firebaseConfig = {
@@ -46,7 +47,8 @@ const auth = getAuth(app);
     LoginModule,
     ServicePageModule,
     LandingPageModule,
-    ComponentsModule
+    ComponentsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

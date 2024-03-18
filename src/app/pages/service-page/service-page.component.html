@@ -9,11 +9,11 @@
     
         <span class="service-page__container-form-subtitle service-page__container-form-subtitle-m-top">Escolha o Serviço Desejado:</span>
         <ul class="service-page__container-form-list">
-            <li class="service-page__container-form-list-service" [ngClass]="{'clicado': selectedItemIndex === 1}" (click)="onItemClick(1)">
+            <li class="service-page__container-form-list-service" [ngClass]="{'clicado': selectedItemIndex === 0}" (click)="onItemClick(0)">
                 <img class="service-page__container-form-list-service-image" src="../../../../../assets/images/file_9079107.png" alt="">
                 <h3 class="service-page__container-form-list-service-title">Transcrever Audio</h3>
             </li>
-            <li class="service-page__container-form-list-service" [ngClass]="{'clicado': selectedItemIndex === 0}" (click)="onItemClick(0)">
+            <li class="service-page__container-form-list-service" [ngClass]="{'clicado': selectedItemIndex === 1}" (click)="onItemClick(1)">
                 <img class="service-page__container-form-list-service-image" src="../../../../../assets/images/documentation_12238166.png" alt="">
                 <h3 class="service-page__container-form-list-service-title">Criar Resumo</h3>
             </li>
@@ -27,9 +27,17 @@
         <input class="service-page__container-form-button service-page__container-form-button-primary-color" type="submit" value="Enviar">
     
     </form>
-    
-    <div class="service-page__container-loading" *ngIf="displayLoading">
-        <dotlottie-player src="../../../assets/loader.json" background="transparent" speed="1" class="service-page__container-loading-animation" direction="1" playMode="normal" loop  autoplay></dotlottie-player>
-        <p class="service-page__container-loading-paragraph">{{ textDisplay }}</p>
+
+    <div class="service-page__container-result" *ngIf="displayService">
+        <div class="service-page__container-result-loading" *ngIf="displayLoading">
+            <dotlottie-player src="../../../assets/loader.json" background="transparent" speed="1" class="service-page__container-result-loading-animation" direction="1" playMode="normal" loop  autoplay></dotlottie-player>
+            <p class="service-page__container-result-loading-paragraph">{{ textDisplay }}</p>
+        </div>
+
+        <div class="service-page__container-result-service" *ngIf="displayResults" [innerHTML]="getContentWithoutHeadAndFooter()">
+            
+        </div>
     </div>
+    
+    
 </div>
