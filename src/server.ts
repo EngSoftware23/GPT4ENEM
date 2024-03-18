@@ -7,7 +7,7 @@ const app: Express = express();
 
 const corsOptions = {
     origin: 'http://localhost:4200/',
-    credententials: true,
+    credentials:true,
     optionsSuccessStatus: 200
   }
   
