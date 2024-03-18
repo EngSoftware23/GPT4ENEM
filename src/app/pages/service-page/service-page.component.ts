@@ -10,7 +10,7 @@ import { environment } from 'src/environments/environment';
 @Component({
   selector: 'app-service-page',
   templateUrl: './service-page.component.html',
-  styleUrls: ['./service-page.component.scss']
+  styleUrls: ['./service-page.component.scss', './service-page-responsive.scss', './service-page-form.scss']
 })
 export class ServicePageComponent   {
   serviceForm: FormGroup;

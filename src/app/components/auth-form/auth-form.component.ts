@@ -7,7 +7,7 @@ import { AuthService } from 'src/app/services/auth.service';
 @Component({
   selector: 'app-auth-form',
   templateUrl: './auth-form.component.html',
-  styleUrls: ['./auth-form.component.scss']
+  styleUrls: ['./auth-form.component.scss','./auth-form-responsive.scss']
 })
 
 export class AuthFormComponent implements OnInit {

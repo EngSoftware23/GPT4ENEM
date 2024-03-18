@@ -1,0 +1,57 @@
+.authform {
+    @media screen and (max-width: 480px) {
+        &-inputs__container {
+            display: flex;
+            flex-direction: column;
+            gap: 1.6rem;
+            width: 100%;
+    
+            &-decoration {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                position: relative;
+    
+                &-input {
+                    border-radius: 50rem;
+                    font-size: 1.4rem;
+                    height: 4rem;
+                    padding-left: 22%;
+                    border: 0.1rem solid $text-gray-light;
+                    width: 100%;
+            
+                    &:focus {
+                        outline: .1rem solid $color-highlight;
+                    }
+                }
+    
+                &-figure {
+                    position: absolute;
+                    background: linear-gradient(90deg, rgba(145,129,244,1) 0%, rgba(80,56,237,1) 100%);
+                    width: fit-content;
+                    height: 100%;
+                    width: 20%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 50rem 0rem 0rem 50rem;
+    
+                    &-svg {
+                        width: 2rem;
+                        height: fit-content;
+                        fill: white;
+                    }
+                }
+            }
+        }
+
+        &-others {
+            gap: 1.5rem;
+           
+            &-paragraph {
+                text-align: center;
+                font-size: 1.5rem;
+            }
+        }
+    }
+}

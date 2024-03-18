@@ -11,11 +11,7 @@
         gap: 10rem;
     }
 
-    @media screen and (min-width: 1600px) {
-        &__container {
-            height: 70vh;
-        }
-    }
+    
 
     &-informations {
         width: 100%;
@@ -50,27 +46,5 @@
         }
     }
 
-    @media screen and (max-width: 480px) {
-        &__container {
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            height: 80vh;
-            gap: 0rem;
-        }
-
-        &-informations {
-            order: 2;
-            text-align: justify;
-            align-items: center;
-            margin-top: 0rem;
-
-            &-title {
-                font-size: 2.4rem;
-                line-height: 3rem;
-                text-align: center;
-            }
     
-        }
-    }
 }

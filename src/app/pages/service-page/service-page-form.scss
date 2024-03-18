@@ -1,0 +1,94 @@
+.service-page {
+    &__container {
+        &-form {
+            display: flex;
+            flex-direction: column;
+            min-height: 85vh;
+            gap: 2rem;
+            justify-content: center;
+            align-items: center;
+
+            
+
+            &-title {
+                font-size: 3rem;
+            }
+
+            &-subtitle {
+                font-size: 1.7rem;
+                &-m-top {
+                    margin-top: 2rem;
+                }
+            }
+        
+            &-input {
+                padding: 1.5rem;
+                font-size: 1.7rem;
+                font-weight: 500;
+                border: .1rem solid $text-gray-light;
+                width: 50rem;
+                text-align: center;
+                background: $color-white;
+                border-radius: 50rem;
+
+                &:focus {
+                    outline: .1rem solid $color-highlight;
+                }  
+            }
+        
+            &-button {
+                border: none;
+                font-size: 1.8rem;
+                font-weight: 500;
+                @include button;
+                margin-top: 2rem;
+            }
+        
+            &-list {
+                margin-top: 1rem;
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+                list-style: none;
+                gap: 2rem;
+                width: 100%;
+    
+                &-service {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 1rem;
+                    width: 100%;
+                    background-color: white;
+                    border-radius: 2rem;            
+                    padding: 1rem;
+                    cursor: pointer;
+                    transition: all .2s;
+    
+                    &.clicado {
+                        transform: translateY(-1rem);
+                        box-shadow: rgba(137, 46, 240, 0.4) 0px 5px, rgba(162, 46, 240, 0.3) 0px 10px, rgba(114, 46, 240, 0.2) 0px 15px, rgba(75, 46, 240, 0.1) 0px 20px, rgba(82, 46, 240, 0.05) 0px 25px;
+                        background: $color-highlight;
+                        color: white;
+                    }
+    
+                    &:hover {
+                        transform: translateY(-1rem);
+                        box-shadow: rgba(240, 46, 170, 0.4) 0px 5px, rgba(240, 46, 170, 0.3) 0px 10px, rgba(240, 46, 170, 0.2) 0px 15px, rgba(240, 46, 170, 0.1) 0px 20px, rgba(240, 46, 170, 0.05) 0px 25px;
+                    }
+    
+                    &-image {
+                        width: 8rem;
+                    }
+    
+                    &-title {
+                        width: 60%;
+                        text-align: center;
+                        font-size: 1.6rem;
+                    }
+                }
+            }
+        }
+
+    }
+}
