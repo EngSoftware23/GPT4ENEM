@@ -26,6 +26,8 @@ export const saveToFirestore = async (userId: string, transcription: string, gpt
                     - gptResponse: "..."
                     - firstSentence: "..."
                     - timestamp: ...
+    
+    
     */
 
     await docRef.set({

@@ -29,14 +29,14 @@ export const downloadAudio = async (req: Request, res: Response) => {
                 try {
                     const transcription = await sendAudioToWhisper(audioPath);
                     if (req.originalUrl === `/revisao`) {
-                        const revisao = await sendTranscriptionToGPT(uid, transcription.text, 'A seguinte video-aula aborda conteúdos relevantes para o ENEM? Por favor, explique porque sim e que tipo de conteudo é esse ou por que não cai.');
+                        const revisao = await sendTranscriptionToGPT(uid, transcription.text, 'A seguinte video-aula aborda conteúdos relevantes para o ENEM? Por favor, explique estruturando sua resposta em tags html porque sim e que tipo de conteudo é esse ou por que não cai e coloque um h1 inicial com o texto verificação de Cobertura ENEM.');
                         res.status(200).send(revisao);
                     } else if (req.originalUrl === `/resumo`) {
-                        const resumo = await sendTranscriptionToGPT(uid, transcription.text, 'Faça uma resumo academico desse video que foi transcrito separando os conteudos em subtopicos e dando um explicação detalhada do que foi abordado');
+                        const resumo = await sendTranscriptionToGPT(uid, transcription.text, 'Faça uma resumo academico construido em tags html desse video que foi transcrito separando os conteudos em subtopicos e dando um explicação detalhada do que foi abordado');
                         res.status(200).send(resumo);
                     }
                     else {
-                      const transcricao = await sendTranscriptionToGPT(uid, transcription.text, 'Repita o que escrevi');
+                      const transcricao = await sendTranscriptionToGPT(uid, transcription.text, 'Faça esse texto ser estruturado tags html respeitando os paragrafos e quebras de linha, coloque como tag h1 no inicio com o texto Sua Transcrição');
                       res.status(200).send(transcricao);
                     }
 
