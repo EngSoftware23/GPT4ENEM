@@ -35,7 +35,7 @@ export const downloadAudio = async (req: Request, res: Response) => {
                         const resumo = await sendTranscriptionToGPT(uid, transcription.text, 'Faça uma resumo academico construido em tags html desse video que foi transcrito separando os conteudos em subtopicos e dando um explicação detalhada do que foi abordado');
                         res.status(200).send(resumo);
                     }
-                    else {
+                    else if(req.originalUrl === `/transcricao`){
                       const transcricao = await sendTranscriptionToGPT(uid, transcription.text, 'Faça esse texto ser estruturado tags html respeitando os paragrafos e quebras de linha, coloque como tag h1 no inicio com o texto Sua Transcrição');
                       res.status(200).send(transcricao);
                     }
