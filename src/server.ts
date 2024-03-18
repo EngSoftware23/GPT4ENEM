@@ -1,7 +1,6 @@
 import express, { Express } from "express";
 import mainRouter from "./routes/index";
-import cors from "cors"; // Importe o módulo cors
-
+import cors from "cors"; 
 
 const app: Express = express();
 

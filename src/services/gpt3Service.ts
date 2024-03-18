@@ -19,11 +19,9 @@ export const sendTranscriptionToGPT = async (uid: string, transcription: string,
 
         console.log(response.choices[0]);
 
-        // Verificar se response.choices[0].message.content é null
         let gptResponseContent = response.choices[0]?.message?.content || 'O GPT-3.5 Turbo não forneceu uma resposta';
 
 
-        // Salvar a resposta no Firestore
         await saveToFirestore(uid,transcription, gptResponseContent);
 
         return response.choices[0];
