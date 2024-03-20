@@ -102,4 +102,47 @@
             }
         }   
     }
+
+    @media screen and (max-width: 480px) {
+        &-aside {
+            position: fixed;
+            z-index: 200;
+            right: -90%;
+            top: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            background-color: white;
+            width: 75%;
+            height: 100vh;
+            padding: 3rem;
+            border-radius: 2rem 0 0 2rem;
+
+            &.visible {
+                animation: .4s openAsideMobile ease-in-out forwards;
+            }
+    
+            &.fade-out-animation {
+                animation: .4s closeAsideMobile ease-in-out;
+            }
+
+            &-user {
+                &-icon-informations {
+        
+                    &-img {
+                        width: 6rem;
+                    }
+    
+                    &-texts {
+                        display: flex;
+                        flex-direction: column;
+
+                        &-name {
+                            font-size: 1.6rem;
+                        }
+                    }
+                }
+            }
+        }  
+    }
 }

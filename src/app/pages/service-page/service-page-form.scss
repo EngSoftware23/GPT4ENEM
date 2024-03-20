@@ -93,5 +93,86 @@
             }
         }
 
+        @media screen and (max-width: 480px) {
+            &-form {
+                display: flex;
+                flex-direction: column;
+                min-height: 85vh;
+                width: 100%;
+                gap: 2rem;
+                padding-top: 5rem;
+                padding-bottom: 5rem;
+                justify-content: center;
+                align-items: center;
+    
+                &-title {
+                    font-size: 2rem;
+                }
+    
+                &-subtitle {
+                    font-size: 1.5rem;
+                    &-m-top {
+                        margin-top: 2rem;
+                    }
+                }
+            
+                &-input {
+                    padding: 1.5rem;
+                    font-size: 1.7rem;
+                    font-weight: 500;
+                    border: none;
+                    width: 100%;
+                    text-align: center;
+                    background: $color-white;
+                    border-radius: 50rem;
+    
+                    &:focus {
+                        outline: none;
+                    }
+                   
+                }
+            
+                &-button {
+                    border: none;
+                    font-size: 1.8rem;
+                    font-weight: 500;
+                    margin-top: 2rem;
+                }
+            
+                &-list {
+                    margin-top: 1rem;
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+                    list-style: none;
+                    gap: 2rem;
+                    width: 100%;
+        
+                    &-service {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        gap: 2rem;
+                        width: 100%;
+                        background-color: white;
+                        border-radius: 2rem;            
+                        padding: 1rem;
+                        cursor: pointer;
+                        transition: all .2s;
+        
+                        &-image {
+                            width: 7rem;
+                        }
+        
+                        &-title {
+                            width: 60%;
+                            text-align: center;
+                            font-size: 1.5rem;
+                        }
+                    }
+                }
+                }
+        }
+
     }
 }
