@@ -10,7 +10,8 @@
     "test": "set NODE_ENV=test&& jest --runInBand",
     "start": "node dist/server.js",
     "start-dev": "nodemon src/server.ts",
-    "watch": "tsc -w"
+    "watch": "tsc -w",
+    "build": "tsc"
   },
   "repository": {
     "type": "git",

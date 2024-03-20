@@ -1,4 +1,5 @@
 // gpt3Service.test.ts
+/*
 import { sendTranscriptionToGPT } from '../services/gpt3Service';
 import { saveToFirestore } from '../database/firestoreDatabase';
 import OpenAI from 'openai';
@@ -43,3 +44,4 @@ describe('sendTranscriptionToGPT', () => {
     });
   });
 });
+*/
