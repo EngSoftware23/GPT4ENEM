@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "GPT 4 ENEM",
   "main": "index.js",
+  "engines": {
+    "node": "18.13.0"
+  },
   "scripts": {
     "test": "set NODE_ENV=test&& jest --runInBand",
     "start": "node dist/server.js",

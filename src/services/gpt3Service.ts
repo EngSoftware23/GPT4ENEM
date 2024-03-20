@@ -1,4 +1,3 @@
-import { saveToFirestore } from '../database/firestoreDatabase';
 import OpenAI from "openai";
 import dotenv from "dotenv";
 
@@ -19,10 +18,6 @@ export const sendTranscriptionToGPT = async (uid: string, transcription: string,
 
         console.log(response.choices[0]);
 
-        let gptResponseContent = response.choices[0]?.message?.content || 'O GPT-3.5 Turbo não forneceu uma resposta';
-
-
-        await saveToFirestore(uid,transcription, gptResponseContent);
 
         return response.choices[0];
 
