@@ -6,13 +6,13 @@ export const saveToFirestore = async (userId: string, transcription: string, gpt
     const firstSentence = gptResponse.split('.')[0];
     
     //Gerar um ID único para cada registro do usuário
-    const docId = db.collection('respostas').doc().id;
+    const docId = db.collection('usuarios').doc().id;
 
     //Referência para o documento do usuário
-    const userDocRef = db.collection('respostas').doc(userId);
+    const userDocRef = db.collection('usuarios').doc(userId);
 
     //Criar uma coleção dentro do documento do usuário
-    const userCollectionRef = userDocRef.collection('registros');
+    const userCollectionRef = userDocRef.collection('respostas');
 
     //Criar um documento dentro da coleção do usuário
     const docRef = userCollectionRef.doc(docId);
@@ -22,10 +22,9 @@ export const saveToFirestore = async (userId: string, transcription: string, gpt
         - userId
             - registros
                 - docId
-                    - transcription: "..."
                     - gptResponse: "..."
                     - firstSentence: "..."
-                    - timestamp: ...
+
     
     
     */
