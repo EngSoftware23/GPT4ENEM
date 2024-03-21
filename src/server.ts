@@ -18,6 +18,6 @@ app.use(cors(corsOptions));
   
 app.use(mainRouter);
 
-app.listen(process.env.PORT, () => {
+app.listen(80, () => {
     console.log('Aplicação rodando');
 });
